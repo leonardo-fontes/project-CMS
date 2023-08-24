@@ -1,6 +1,6 @@
 import Button from "../../inputs/Button";
 
-function Company() {
+function CompanyHome() {
   return (
     <>
       <div className="flex mx-auto container justify-center py-12 items-center">
@@ -19,4 +19,4 @@ function Company() {
   );
 }
 
-export default Company;
+export default CompanyHome;

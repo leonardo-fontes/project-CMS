@@ -1,6 +1,6 @@
 import Button from "../../inputs/Button";
 
-function Voluntary() {
+function VoluntaryHome() {
   return (
     <div className="container mx-auto flex flex-col px-48 my-16 gap-6">
       <h2 className="text-4xl font-bold w-4/5">Programa de voluntariado da Acesse-me</h2>
@@ -18,4 +18,4 @@ function Voluntary() {
   );
 }
 
-export default Voluntary;
+export default VoluntaryHome;

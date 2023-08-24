@@ -1,10 +1,10 @@
-//linear-gradient(#6f3dff,#5600c2);
+
 import Container from "./Container";
 import SocialIcons from "../inputs/SocialIcons";
 function Footer() {
   return (
     <>
-      <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white ">
+      <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
         <div className="container mx-auto flex py-16 justify-evenly">
         <div className="flex flex-col">
           <img className="object-contain w-16 mb-4" src="/icons/logo.png" alt="" />

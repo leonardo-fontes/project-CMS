@@ -10,7 +10,7 @@ interface User {
   id: number;
 }
 
-function About() {
+function AboutHome() {
   const usuarios: Array<User> = [
     {
       id: 0,
@@ -80,4 +80,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutHome;

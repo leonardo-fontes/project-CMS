@@ -1,6 +1,6 @@
 import Button from "../../inputs/Button";
 
-function Connections() {
+function ConnectionsHome() {
   return (
     <>
       <div className="flex container mx-auto py-10 items-center justify-between">
@@ -45,4 +45,4 @@ function Connections() {
   );
 }
 
-export default Connections;
+export default ConnectionsHome;

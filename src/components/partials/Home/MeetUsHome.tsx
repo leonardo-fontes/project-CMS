@@ -1,6 +1,6 @@
 import Button from "../../inputs/Button";
 
-function MeetUs() {
+function MeetUsHome() {
   return (
     <div className="flex flex-col gap-12 items-center justify-center container mx-auto py-24">
       <h3 className="text-5xl w-5/12 text-center font-bold leading-normal">Conheça a vida e história de pessoas com deficiência</h3>
@@ -13,4 +13,4 @@ function MeetUs() {
   );
 }
 
-export default MeetUs;
+export default MeetUsHome;

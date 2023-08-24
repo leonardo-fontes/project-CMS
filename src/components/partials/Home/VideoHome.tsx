@@ -1,6 +1,6 @@
 import Button from "../../inputs/Button";
 
-function Video() {
+function VideoHome() {
   return (
     <>
       <div className="mx-auto container flex flex-col items-center my-24 justify-center">
@@ -32,4 +32,4 @@ function Video() {
   );
 }
 
-export default Video;
+export default VideoHome;

@@ -3,7 +3,7 @@ import Button from "../inputs/Button";
 function Navbar() {
   return (
     <>
-      <div className="w-full mt-4">
+      <div className="w-full my-4 ">
         <div className="flex justify-around gap-[40em] container mx-auto py-4">
           <a href="https://www.acesseme.com/">
             <img
