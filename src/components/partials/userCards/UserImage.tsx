@@ -8,9 +8,9 @@ function UserImage({photo, handleClick}:User) {
 
   return (
     <div onClick={handleClick}
-     className="w-32 aspect-video px-6 py-2  flex items-center justify-center rounded-2xl hover:shadow-2xl">
+     className="md:w-32 aspect-video lg:px-6 py-2 flex items-center justify-center rounded-2xl hover:shadow-2xl">
               <img
-                className="w-20 aspect-square object-cover rounded-full"
+                className="md:w-20 w-12 aspect-square object-cover rounded-full"
                 src={`/images/${photo}`}
                 alt=""
               />

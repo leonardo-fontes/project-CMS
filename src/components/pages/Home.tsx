@@ -10,18 +10,18 @@ import BlogHome from "../partials/Home/BlogHome";
 
 function Home() {
   const primaryBg =
-    "bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white";
+    "bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white";
   const secondaryBg = "bg-white text-[#1a1b1f]";
   return (
     <>
       <div className="w-full flex flex-col">
         <Navbar />
-        <div className="flex justify-center items-center my-16 gap-28 ">
-          <div className="flex flex-col gap-6 w-[28%]">
-            <h4 className="font-bold text-7xl">
+        <div className="flex lg:flex-row flex-col justify-center items-center md:my-16 my-12 lg:gap-28 md:gap-20 gap-12 md:ml-4 lg:ml-0 ">
+          <div className="flex flex-col text-start md:items-start items-center gap-6  lg:w-[28%] lg:px-0 md:px-12 px-6">
+            <h4 className="md:w-[70%]  lg:w-full font-semibold md:text-7xl text-5xl ">
               Transforme vidas com sua história
             </h4>
-            <p className="text-base">
+            <p className="text-base leading-relaxed lg:w-full sm:w-full md:w-[80%]">
               Faça parte da plataforma que conecta as experiências de pessoas
               com deficiência, doenças raras e sua rede de apoio para
               transformar vidas.
@@ -29,10 +29,14 @@ function Home() {
             <Button
               link="https://acesseme.com.br/login"
               text="Quero compartilhar minha história"
-              classname="w-72 self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
+              classname="w-80 px-4 lg:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
             />
           </div>
-          <img src="/images/people.png" alt="" />
+          <img
+            className="w-auto px-4 hidden lg:block"
+            src="/images/people.png"
+            alt=""
+          />
         </div>
         <div className={secondaryBg}>
           {" "}
@@ -63,7 +67,6 @@ function Home() {
           <MeetUsHome />{" "}
         </div>
       </div>
-      
     </>
   );
 }

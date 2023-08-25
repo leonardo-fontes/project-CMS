@@ -8,6 +8,7 @@ import Privacy from "./components/pages/Privacy";
 import Terms from "./components/pages/Terms";
 import Input from "./components/inputs/Input";
 import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 
 function App() {
   const primaryBg =
@@ -17,11 +18,12 @@ function App() {
   return (
     <>
       {/* <Container classname={primaryBg} children={<Home />} /> */}
-      {/* <Container classname={`min-h-[12vh] ${primaryBg}`} children={<Navbar />} />
-      <Container classname={`${secondaryBg}`} children={<BlogPage />} /> */}
+      {/* <Container classname={`min-h-[12vh] items-center ${primaryBg}`} children={<Navbar />} /> */}
+      {/* <Container classname={`${secondaryBg}`} children={<BlogPage />} /> */}
       {/* <Container classname={secondaryBg} children={<Privacy/>} /> */}
       {/* <Container classname={secondaryBg} children={<Terms/>} /> */}
       <Container classname={secondaryBg} children={<Login/>}/>
+      {/* <Container classname={secondaryBg} children={<Register/>}/> */}
       
       <Footer />
     </>

@@ -5,66 +5,66 @@ import MeetUsHome from "../partials/Home/MeetUsHome";
 function Privacy() {
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
-          <div className="flex flex-col container mx-auto items-center">
+          <div className="flex flex-col container mx-auto md:items-center">
             <Navbar />
-            <h2 className="text-6xl w-[65%] leading-normal font-semibold my-24">
+            <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[65%] lg:leading-normal font-semibold my-12 lg:my-24">
               Política de Privacidade e Segurança da Acesse-me
             </h2>
           </div>
         </Container>
-        <div className="flex flex-col container mx-[22rem]">
-            <h3 className="font-semibold text-4xl ml-2 p-6">Sumário</h3>
-          <ol role="list" className="flex flex-col gap-6 ml-4">
-            <li className="list-item-zero">
-              <a href="#item-1" className="underline text-lg text-[#333] ml-10">
+        <div className="flex flex-col container px-4 lg:px-0 lg:mx-[22rem]">
+            <h3 className="font-semibold text-4xl lg:ml-2 p-6">Sumário</h3>
+          <ol role="list" className="flex flex-col gap-6 md:ml-4">
+            <li className="flex items-center">
+              <a href="#item-1" className="underline text-lg text-[#333]lg:ml-10">
                 1. Propriedade e Apresentação
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-2" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-2" className="underline text-lg text-[#333]lg:ml-10">
                 2. Definições
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-3" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-3" className="underline text-lg text-[#333]lg:ml-10">
                 3. Contato
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-4" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-4" className="underline text-lg text-[#333]lg:ml-10">
                 4. Quais Informações são Coletadas e Como são Tratadas
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-5" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-5" className="underline text-lg text-[#333]lg:ml-10">
                 5. Como os Dados podem ser Compartilhados
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-6" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-6" className="underline text-lg text-[#333]lg:ml-10">
                 6. Direitos dos USUÁRIOS
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-7" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-7" className="underline text-lg text-[#333]lg:ml-10">
                 7. Bases Legais para Tratamento de Dados
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-8" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-8" className="underline text-lg text-[#333]lg:ml-10">
                 8. Armazenamento
               </a>
             </li>
-            <li className="list-item-zero">
-              <a href="#item-9" className="underline text-lg text-[#333] ml-10">
+            <li className="flex items-center">
+              <a href="#item-9" className="underline text-lg text-[#333]lg:ml-10">
                 9. Medidas de Segurança
               </a>
             </li>
           </ol>
         </div>
-        <div role="list" className="mx-[22rem] w-[60%] container pb-8 my-12">
+        <div role="list" className="lg:mx-[22rem] mx-8 md:mx-16 lg:w-[60%]  pb-8 my-12">
           <div role="listitem" className="w-dyn-item" id="item-1">
             <div aria-hidden="true" className="screen-reader-only"></div>
             <div className="section-4">

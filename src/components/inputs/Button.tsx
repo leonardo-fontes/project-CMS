@@ -6,7 +6,7 @@ interface Props {
 
 function Button({link, text, classname}:Props) {
   return (
-    <button className={`rounded-3xl p-3 hover:shadow-2xl transition duration-150 ${classname}`}>
+    <button className={`rounded-3xl p-3 hover:shadow-lg transition duration-150 ${classname}`}>
       <a href={link}>{text}</a>
     </button>
   );

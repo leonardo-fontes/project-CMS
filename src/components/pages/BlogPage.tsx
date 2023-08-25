@@ -24,17 +24,17 @@ function BlogPage() {
     <>
     <div className="w-full">
       <div className="flex flex-col mx-auto container text-[#9c9c9c] ">
-        <div className="mx-40 my-16">
-          <h2 className="text-5xl w-[55%] font-normal text-black leading-snug">
+        <div className="lg:mx-40 mx-4 my-16">
+          <h2 className="lg:text-5xl text-4xl w-[90%] lg:w-[55%] font-normal text-black leading-snug">
             {posts[0].title}
           </h2>
           <p className="text-sm w-[55%] tracking-widest mt-6 ">
             {posts[0].data}
           </p>
         </div>
-        <img className="w-[70%] mx-40" src={posts[0].image} alt="" />
-        <div className="mx-40 flex items-center">
-          <p className="w-[70%] text-lg py-20">
+        <img className="lg:w-[70%] lg:mx-40 lg:h-auto h-[60vh] object-cover" src={posts[0].image} alt="" />
+        <div className="lg:mx-40 mx-4 flex items-center">
+          <p className="lg:w-[70%] text-lg py-20">
             Muitas vezes disfarçado de humor o Capacitismo &nbsp;é um tipo de
             discriminação contra pessoas com deficiência e impede a inclusão e a
             diversidade.
@@ -88,12 +88,12 @@ function BlogPage() {
         
       </div>
       <Container classname="bg-[#f8f8f8]">
-          <div className="flex flex-col justify-center items-center w-full py-40">
-          <h2 className="font-bold text-5xl text-black w-[50%] text-center pb-12">Conheça a vida e história de pessoas com deficiência</h2>
+          <div className="flex flex-col justify-center items-center w-full py-20 lg:py-40">
+          <h2 className="font-bold md:text-5xl text-2xl text-black md:w-[80%] lg:w-[50%] text-center pb-12">Conheça a vida e história de pessoas com deficiência</h2>
           <Button
             text="Seja Acesse-me"
             link="https://acesseme.com.br/login"
-            classname="bg-[var(--primary-color)] text-white text-sm w-[9.5rem]"
+            classname="bg-[var(--primary-color)] text-white text-sm w-[80%] md:w-[9.5rem]"
           />
           </div>
           

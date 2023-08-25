@@ -8,16 +8,15 @@ interface User {
 function UserCard({ name, title, description, photo }: User) {
   return (
     <>
-      <div className="flex flex-col relative gap-6 min-w-full border-solid border-[3px] border-[var(--primary-color)] rounded-2xl px-12 pb-12 pt-20">
-        <p className="w-[30rem]">{description}</p>
+      <div className="flex flex-col relative gap-6 lg:min-w-full max-w-[80vw] border-solid border-[3px] border-[var(--primary-color)] rounded-2xl lg:px-12 px-6 pb-12 md:pt-20 pt-12">
+        <p className="lg:w-[30rem]">{description}</p>
         <p className="font-bold">{`${name} - ${title}`}</p>
         <img
-        className="w-32 aspect-square absolute bottom-[75%] right-[40%] object-cover rounded-full border-solid border-[3px] border-[var(--primary-color)]"
-        src={`/images/${photo}`}
-        alt=""
-      />
+          className="md:w-32 w-20 aspect-square absolute lg:bottom-[75%] md:bottom-[75%] bottom-[90%] lg:right-[40%] md:right-[40%] right-[38%] object-cover rounded-full border-solid border-[3px] border-[var(--primary-color)]"
+          src={`/images/${photo}`}
+          alt=""
+        />
       </div>
-      
     </>
   );
 }

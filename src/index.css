@@ -6,3 +6,8 @@
     --primary-color: #6f3dff;
     --gradient-color: #5600c2;
 }
+
+*, html{
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}

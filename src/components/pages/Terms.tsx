@@ -5,84 +5,84 @@ import MeetUsHome from "../partials/Home/MeetUsHome";
 function Terms() {
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
-          <div className="flex flex-col container mx-auto items-center ">
+          <div className="flex flex-col container mx-auto md:items-center">
             <Navbar />
-            <h2 className="text-6xl w-[65%] leading-normal font-semibold my-24">
+            <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[65%] md:leading-normal font-semibold my-12 lg:my-24">
             Termos Gerais de Uso da Acesse-me
             </h2>
           </div>
         </Container>
-        <div className="flex flex-col container mx-[22rem]">
-          <h3 className="font-semibold text-4xl ml-2 p-6">Sumário</h3>
-          <ol role="list" className="flex flex-col gap-6 ml-4">
-            <li className="list-item-zero">
+        <div className="flex flex-col container px-4 lg:px-0 lg:mx-[22rem]">
+          <h3 className="font-semibold text-4xl lg:ml-2 p-6">Sumário</h3>
+          <ol role="list" className="flex flex-col lg:gap-6 gap-4 md:ml-4">
+            <li className="flex items-center">
               <a href="#item-1" className="underline text-lg text-[#333] ml-10">
                 1. Propriedade e Apresentação
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-2" className="underline text-lg text-[#333] ml-10">
                 2. Condições de Acesso e Uso da Plataforma ACESSE-ME
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-3" className="underline text-lg text-[#333] ml-10">
                 3. Cadastro de USUÁRIOS
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-4" className="underline text-lg text-[#333] ml-10">
                 4. Cadastro de Associações
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-5" className="underline text-lg text-[#333] ml-10">
                 5. Funcionalidades da Plataforma ACESSE-ME
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-6" className="underline text-lg text-[#333] ml-10">
                 6. Preços e Pagamentos
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-7" className="underline text-lg text-[#333] ml-10">
                 7. Cancelamento da Conta de Acesso
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-8" className="underline text-lg text-[#333] ml-10">
                 8. Comunicações e Contato
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-9" className="underline text-lg text-[#333] ml-10">
                 9. Exclusão de Garantias e Responsabilidade
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-10" className="underline text-lg text-[#333] ml-10">
                 10. Duração e Atualizações
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-11" className="underline text-lg text-[#333] ml-10">
                 11. Dados Pessoais, Privacidade e Segurança
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-12" className="underline text-lg text-[#333] ml-10">
                 12. Propriedade Intelectual e Industrial
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-13" className="underline text-lg text-[#333] ml-10">
                 13. Condições Gerais
               </a>
             </li>
-            <li className="list-item-zero">
+            <li className="flex items-center">
               <a href="#item-14" className="underline text-lg text-[#333] ml-10">
                 14. Lei aplicável e Foro de Eleição
               </a>
@@ -91,7 +91,7 @@ function Terms() {
         </div>
         <div
           role="list"
-          className="mx-[22rem] w-[60%] container pb-8 my-12 leading-relaxed"
+          className="lg:mx-[22rem] mx-8 md:mx-16 lg:w-[60%] pb-8 my-12"
         >
           <div role="listitem" className="w-dyn-item" id="item-1">
             <div aria-hidden="true" className="idtext screen-reader-only"></div>
@@ -648,7 +648,7 @@ function Terms() {
                     poderá se utilizar dos seguintes canais de comunicação:
                   </p>
                   <br></br>
-                  <ol className="flex flex-col gap-8 ml-10" role="list">
+                  <ol className="flex flex-col lg:gap-8 gap-4 ml-10" role="list">
                     <li>
                       1. E-mails <br></br>
                       <a
