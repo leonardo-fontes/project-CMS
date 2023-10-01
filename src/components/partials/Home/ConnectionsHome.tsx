@@ -37,7 +37,7 @@ function ConnectionsHome() {
             </div>
           </div>
           <Button
-            link="https://acesseme.com.br/login"
+            link="/login"
             text="Quero fazer o meu cadastro"
             classname="md:w-60 w-[80vw] ml-0 md:ml-12 lg:ml-0 md:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
           />

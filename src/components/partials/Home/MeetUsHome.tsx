@@ -8,7 +8,7 @@ function MeetUsHome() {
       </h3>
       <Button
         text="Seja Acesse-me"
-        link="https://acesseme.com.br/login"
+        link="/login"
         classname="bg-[var(--primary-color)] text-white text-sm w-[80vw] md:w-[9.5rem]"
       />
     </div>

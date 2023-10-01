@@ -15,7 +15,7 @@ function VideoHome() {
               com profissionais de saúde e especialistas.
             </p>
             <Button
-              link="https://acesseme.com.br/login"
+              link="/login"
               text="Quero fazer parte"
               classname="bg-[var(--primary-color)] md:self-start sm:ml-0 lg:ml-0 md:ml-6 self-center text-white text-sm w-[90vw] md:w-[9.5rem]"
             />

@@ -20,7 +20,7 @@ function FormLogin() {
                     <p>Não é registrado?</p>
                     <a
                         className=" text-[var(--primary-color)]"
-                        href="https://acesseme.com.br/registrar"
+                        href="/register"
                     >
                         {/* mudar links */}
                         Criar conta

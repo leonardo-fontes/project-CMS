@@ -92,7 +92,7 @@ function BlogPage() {
           <h2 className="font-bold md:text-5xl text-2xl text-black md:w-[80%] lg:w-[50%] text-center pb-12">Conheça a vida e história de pessoas com deficiência</h2>
           <Button
             text="Seja Acesse-me"
-            link="https://acesseme.com.br/login"
+            link="/login"
             classname="bg-[var(--primary-color)] text-white text-sm w-[80%] md:w-[9.5rem]"
           />
           </div>

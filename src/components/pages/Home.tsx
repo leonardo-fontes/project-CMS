@@ -25,7 +25,7 @@ function Home() {
                             de apoio para transformar vidas.
                         </p>
                         <Button
-                            link="https://acesseme.com.br/login"
+                            link="/login"
                             text="Quero compartilhar minha história"
                             classname="w-80 px-4 lg:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
                         />

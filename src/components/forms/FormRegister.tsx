@@ -13,7 +13,7 @@ function FormRegister() {
           <p>Já é registrado?</p>
           <a
             className=" text-[var(--primary-color)]"
-            href="https://acesseme.com.br/registrar"
+            href="/register"
           >
             Entrar
           </a>

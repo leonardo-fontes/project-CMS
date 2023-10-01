@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import { BrowserRouter, Routes, ScrollRestoration } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 import { router } from "./router.tsx";
 import Container from "./components/layout/Container.tsx";
 import Navbar from "./components/layout/Navbar.tsx";
