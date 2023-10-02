@@ -54,9 +54,9 @@ function AboutHome() {
 
   return (
     <>
-      <div className="flex flex-col mx-auto container justify-center items-center  py-16">
-        <h2 className="md:text-7xl text-3xl font-semibold w-9/12 text-center">O que as pessoas falam sobre a Acesse-me</h2>
-        <div className="flex lg:gap-36 gap-8 my-16">
+      <div className="flex flex-col mx-auto container justify-center items-center  py-20">
+        <h2 className="md:text-6xl text-3xl font-merriweather font-semibold w-9/12 text-center">O que as pessoas falam sobre a Acesse-me</h2>
+        <div className="flex lg:gap-36 gap-8 my-16 cursor-pointer">
           {usuarios.map((user) => (
             <UserImage
               key={user.id}

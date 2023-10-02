@@ -4,7 +4,7 @@ function VideoHome() {
   return (
     <>
       <div className="mx-auto container flex flex-col items-center text-start md:my-24 my-12 justify-center">
-        <h1 className="font-bold md:text-5xl lg:text-7xl text-3xl w-5/5 lg:w-4/5 md:pb-0 pb-4 lg:pl-16 pl-4 leading-normal">
+        <h1 className="font-semibold md:text-5xl lg:text-6xl font-merriweather text-3xl w-5/5 lg:w-9/12 md:pb-0 pb-4 lg:pl-0 pl-4 leading-normal">
           A Acesse-me está impactando milhares de vidas
         </h1>
         <div className="flex lg:flex-row flex-col lg:container lg:mx-auto justify-center md:items-start items-center mt-4 md:mt-10 md:gap-20 gap-12">

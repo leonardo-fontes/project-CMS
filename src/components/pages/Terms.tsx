@@ -7,13 +7,13 @@ function Terms() {
             <div className="flex flex-col w-full">
                 <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
                     <div className="flex flex-col container mx-auto md:items-center">
-                        <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[65%] md:leading-normal font-semibold my-12 lg:my-24">
+                        <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[100%] text-center md:leading-normal font-normal font-merriweather my-12 lg:my-24">
                             Termos Gerais de Uso da Acesse-me
                         </h2>
                     </div>
                 </Container>
                 <div className="flex flex-col container px-4 lg:px-0 lg:mx-[22rem] w-[initial]">
-                    <h3 className="font-semibold text-4xl lg:ml-2 p-6">
+                    <h3 className="font-semibold font-merriweather text-4xl lg:ml-2 p-6">
                         Sumário
                     </h3>
                     <ol
@@ -146,7 +146,7 @@ function Terms() {
                         ></div>
                         <div className="leading-relaxed">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     1. Propriedade e Apresentação
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -238,7 +238,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     2. Condições de Acesso e Uso da Plataforma
                                     ACESSE-ME
                                 </h2>
@@ -367,7 +367,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     3. Cadastro de USUÁRIOS
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -435,7 +435,7 @@ function Terms() {
                                         civil.
                                     </p>
                                     <h3 className="text-3xl font-light">
-                                        <strong className="font-bold">
+                                        <strong className="font-semibold font-merriweather">
                                             3.1 Deveres dos USUÁRIOS
                                         </strong>
                                     </h3>
@@ -510,7 +510,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     4. Cadastro de Associações
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -566,7 +566,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     5. Funcionalidades da Plataforma ACESSE-ME
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -719,7 +719,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     6. Preços e Pagamentos
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -843,7 +843,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     7. Cancelamento da Conta de Acesso
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -893,7 +893,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     8. Comunicações e Contato
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -994,7 +994,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     9. Exclusão de Garantias e Responsabilidade
                                 </h2>
                                 <div className="">
@@ -1061,7 +1061,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     10. Duração e Atualizações
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -1145,7 +1145,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     11. Dados Pessoais, Privacidade e Segurança
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -1282,7 +1282,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     12. Propriedade Intelectual e Industrial
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -1343,7 +1343,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     13. Condições Gerais
                                 </h2>
                                 <div className="rich-text-block w-richtext">
@@ -1435,7 +1435,7 @@ function Terms() {
                         ></div>
                         <div className="section-3">
                             <div className="container-11 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-4">
+                                <h2 className="pt-4 font-bold text-4xl pb-4 font-merriweather">
                                     14. Lei aplicável e Foro de Eleição
                                 </h2>
                                 <div className="rich-text-block w-richtext">

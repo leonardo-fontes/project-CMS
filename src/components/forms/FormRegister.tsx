@@ -1,5 +1,6 @@
 import Button from "../inputs/Button";
 import Input from "../inputs/Input";
+import { Link } from "react-router-dom";
 
 function FormRegister() {
   return (
@@ -11,12 +12,9 @@ function FormRegister() {
         </div>
         <div className="flex flex-col">
           <p>Já é registrado?</p>
-          <a
-            className=" text-[var(--primary-color)]"
-            href="/register"
-          >
+          <Link className="text-[var(--primary-color)]" to="/login">
             Entrar
-          </a>
+          </Link>
         </div>
       </div>
 

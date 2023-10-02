@@ -3,10 +3,32 @@ import Input from "../inputs/Input";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { BsApple } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 function FormLogin() {
+    const auth = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const handleLogin = async () => {
+
+        if (email && password) {
+            const isLogged = await auth.signin(email, password);
+            if (isLogged) {
+                navigate('/');
+            } else {
+                alert('deu errado o login');
+            }
+        }
+    }
+
     return (
-        <form className="md:max-w-[600px] max-w-[96vw] w-full bg-white shadow-2xl text-black md:p-10 p-4 rounded-3xl flex flex-col gap-2">
+        <form className="md:max-w-[600px] max-w-[96vw] w-full bg-[white] shadow-2xl text-black md:p-10 p-4 rounded-3xl flex flex-col gap-2">
             <div className="flex items-start justify-between pb-4">
                 <div className="flex flex-col">
                     <h3 className="font-normal md:text-lg text-md ">
@@ -18,13 +40,9 @@ function FormLogin() {
                 </div>
                 <div className="flex flex-col font-normal text-base">
                     <p>Não é registrado?</p>
-                    <a
-                        className=" text-[var(--primary-color)]"
-                        href="/register"
-                    >
-                        {/* mudar links */}
+                    <Link className="text-[var(--primary-color)]" to="/register">
                         Criar conta
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -32,11 +50,15 @@ function FormLogin() {
                 <Input
                     placeholder="Digite seu email"
                     label="Email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                 />
                 <Input
                     type="password"
                     placeholder="Digite sua senha"
                     label="Senha"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                 />
             </div>
             <a
@@ -44,11 +66,13 @@ function FormLogin() {
                 href="https://acesseme.com.br/resetlogin"
             >
                 Esqueceu a senha?
+
             </a>
             <div className="flex items-center justify-between mt-4">
                 <Button
+                    handleClick={handleLogin}
                     text="Entrar"
-                    link=""
+                    link="/"
                     classname="bg-[var(--primary-color)] rounded-xl text-white w-full"
                 />
             </div>
@@ -74,7 +98,9 @@ function FormLogin() {
                 </a>
             </div>
         </form>
+
     );
+
 }
 
 export default FormLogin;

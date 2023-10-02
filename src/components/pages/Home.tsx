@@ -13,10 +13,10 @@ function Home() {
     const secondaryBg = "bg-white text-[#1a1b1f]";
     return (
         <>
-            <div className="w-full flex flex-col">
-                <div className="flex lg:flex-row flex-col justify-center items-center md:my-16 my-12 lg:gap-28 md:gap-20 gap-12 md:ml-4 lg:ml-0 ">
-                    <div className="flex flex-col text-start md:items-start items-center gap-6  lg:w-[28%] lg:px-0 md:px-12 px-6">
-                        <h4 className="md:w-[70%]  lg:w-full font-semibold md:text-7xl text-5xl ">
+            <div className="w-full flex flex-col ">
+                <div className={`flex lg:flex-row flex-col ${primaryBg} justify-center items-center md:py-16 py-12 lg:gap-4 md:gap-20 gap-12 md:pl-4 lg:ml-0`}>
+                    <div className="flex flex-col text-start md:items-start items-center gap-6  lg:w-[38%] lg:px-0 md:px-12 px-6">
+                        <h4 className="md:w-[70%]  lg:w-full font-semibold font-merriweather md:text-7xl text-5xl ">
                             Transforme vidas com sua história
                         </h4>
                         <p className="text-base leading-relaxed lg:w-full sm:w-full md:w-[80%]">

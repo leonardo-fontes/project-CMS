@@ -8,7 +8,7 @@ interface Post {
 function BlogCard() {
   const posts: Array<Post> = [
     {
-      link: "https://www.acesseme.com/post/capacitismo-entenda-o-que-e-e-como-evitar-o-preconceito-disfarcado",
+      link: "/blog-example",
       photo: "/images/pessoas-bar.jpg",
       description:
         " Muitas vezes disfarçado de humor o Capacitismo é um tipo de discriminação contra pessoas com deficiência e impede a inclusão e adiversidade.",
@@ -18,7 +18,7 @@ function BlogCard() {
   ];
 
   return (
-    <div className="flex lg:w-[21rem] w-[70vw] md:w-[70vw] p-3 flex-col rounded-xl hover:shadow-xl lg:h-[50vh] ">
+    <div className="flex lg:w-[21rem] w-[70vw] md:w-[70vw] p-3 flex-col rounded-xl hover:shadow-xl lg:h-[65vh] ">
       <a href={posts[0].link}>
         <img
           className="lg:w-full lg:h-auto h-[55vh] md:h-[68vh] object-cover aspect-video rounded-3xl"

@@ -7,13 +7,13 @@ function Privacy() {
             <div className="flex flex-col w-full">
                 <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
                     <div className="flex flex-col container mx-auto md:items-center">
-                        <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[65%] lg:leading-normal font-semibold my-12 lg:my-24">
+                        <h2 className="md:text-6xl font-merriweather lg:ml-0 ml-4 text-4xl w-[92%] md:w-[72%] lg:leading-normal font-medium my-12 lg:my-24">
                             Política de Privacidade e Segurança da Acesse-me
                         </h2>
                     </div>
                 </Container>
                 <div className="flex flex-col container px-4 lg:px-0 lg:mx-[22rem] w-[initial]">
-                    <h3 className="font-semibold text-4xl lg:ml-2 p-6">
+                    <h3 className="font-semibold text-4xl p-6 font-merriweather ">
                         Sumário
                     </h3>
                     <ol
@@ -23,7 +23,7 @@ function Privacy() {
                         <li className="flex items-center">
                             <a
                                 href="#item-1"
-                                className="underline text-lg text-[#333]lg:ml-10"
+                                className="underline text-lg text-[#333]lg:ml-10  "
                             >
                                 1. Propriedade e Apresentação
                             </a>
@@ -106,7 +106,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3 ">
                                     1. Propriedade e Apresentação
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -183,7 +183,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     2. Definições
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -281,7 +281,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     3. Contato
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -410,7 +410,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     4. Quais Informações são Coletadas e Como
                                     são Tratadas
                                 </h2>
@@ -727,7 +727,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     5. Como os Dados Podem ser Compartilhados
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -902,7 +902,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     6. Direitos do USUÁRIO
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -1037,7 +1037,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     7. Bases Legais para Tratamento de Dados
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -1084,7 +1084,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     8. Armazenamento
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">
@@ -1117,7 +1117,7 @@ function Privacy() {
                         ></div>
                         <div className="section-4">
                             <div className="container-12 w-container">
-                                <h2 className="pt-4 font-bold text-4xl pb-3">
+                                <h2 className="pt-4 font-bold text-4xl font-merriweather pb-3">
                                     9. Medidas de Segurança
                                 </h2>
                                 <div className="rich-text-block-2 w-richtext">

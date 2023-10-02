@@ -20,12 +20,9 @@ function Footer() {
                     <h4 className="font-semibold text-2xl">Acesse-me</h4>
                     <ul className="flex flex-col md:gap-3 gap-2">
                         <li>
-                            <a
-                                className="hover:underline"
-                                href="https://www.acesseme.com/about"
-                            >
+                        <Link className="hover:underline" to="/about">
                                 Sobre
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a

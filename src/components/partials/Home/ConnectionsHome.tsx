@@ -11,13 +11,13 @@ function ConnectionsHome() {
         />
 
         <div className="flex flex-col lg:gap-12 gap-8 lg:w-1/2 lg:items-start items-center">
-          <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold lg:w-4/5 w-[75%] lg:mr-0 mr-0 md:mr-16">
+          <h2 className="lg:text-5xl md:text-4xl text-3xl font-merriweather font-bold lg:w-11/12 w-[75%] lg:mr-0 mr-0 md:mr-16">
             Como as conexões acontecem na Acesse-me
           </h2>
           <div className="flex gap-4 lg:ml-0 ml-12">
             <img className="hidden md:block" src="/icons/icon1.svg" alt="" />
             <div className="flex flex-col gap-1">
-              <h4 className="md:text-3xl text-xl font-medium">Linha da vida</h4>
+              <h4 className="md:text-3xl text-xl font-normal">Linha da vida</h4>
               <p className="lg:w-3/5 leading-relaxed">
                 É onde você registra a sua história e ajuda outras pessoas
                 através das suas experiências, descobertas, primeiros sinais e
@@ -37,9 +37,9 @@ function ConnectionsHome() {
             </div>
           </div>
           <Button
-            link="/login"
+            link="/register"
             text="Quero fazer o meu cadastro"
-            classname="md:w-60 w-[80vw] ml-0 md:ml-12 lg:ml-0 md:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
+            classname="md:w-64 w-[80vw] ml-0 md:ml-12 lg:ml-0 md:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
           />
         </div>
       </div>
