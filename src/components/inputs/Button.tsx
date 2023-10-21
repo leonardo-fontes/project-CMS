@@ -1,19 +1,20 @@
 interface Props {
-  link: string;
-  text: string;
-  classname: string;
-  handleClick?: () => void;
-
+    text: string;
+    classname: string;
+    handleClick?: () => void;
+    type?: "button" | "submit";
 }
 
-function Button({ handleClick, link, text, classname }: Props) {
-  return (
-    <button type="button"
-      onClick={handleClick}
-      className={`rounded-3xl p-3 hover:shadow-lg transition duration-150 ${classname}`}>
-      <a href={link}>{text}</a>
-    </button>
-  );
+function Button({ handleClick, text, classname, type = "button" }: Props) {
+    return (
+        <button
+            type={type}
+            onClick={handleClick}
+            className={`rounded-3xl p-3 hover:shadow-lg transition duration-150 ${classname}`}
+        >
+            {text}
+        </button>
+    );
 }
 
 export default Button;

@@ -1,7 +1,7 @@
 import { User } from "../Auth/AuthContext";
 import { useCallback, useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
-import api from "../../service/api";
+import api, { SigninData } from "../../service/api";
 
 export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     const [user, setUser] = useState<User | null>(null);
@@ -20,14 +20,8 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
         validateToken();
     }, [validateToken]);
 
-    const signin = async (email: string, password: string) => {
-        const data = await api.signin(email, password);
-        if (data.user && data.token) {
-            setUser(data.user);
-            setToken(data.Token);
-            return true;
-        }
-        return false;
+    const signin = async (data: SigninData) => {
+        return await api.signin(data);
     };
 
     const signout = async () => {

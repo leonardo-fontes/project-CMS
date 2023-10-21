@@ -1,16 +1,17 @@
 import { createContext } from "react";
+import { SigninData } from "../../service/api";
 
 export type User = {
     id: number;
     name: string;
     email: string;
     password?: string;
-}
+};
 
 export type AuthContextType = {
     user: User | null;
-    signin: (email: string, password: string) => Promise<boolean>;
+    signin: (data: SigninData) => Promise<boolean>;
     signout: () => void;
-}
+};
 
 export const AuthContext = createContext<AuthContextType>(null!);
