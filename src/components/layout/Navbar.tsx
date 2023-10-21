@@ -1,23 +1,23 @@
 import { useContext, useState } from "react";
 import Button from "../inputs/Button";
 import { HiMenu } from "react-icons/hi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 function Navbar() {
     const pages = ["login", "register"];
     const [isVisible, setIsVisible] = useState("hidden");
     const { pathname } = useLocation();
+    const navigate = useNavigate();
 
     const auth = useContext(AuthContext);
-
 
     const handleLogout = async () => {
         if (auth.user) {
             await auth.signout();
-            window.location.href = window.location.href;
-        }         
-    }
+            navigate("/");
+        }
+    };
 
     function handleClick() {
         isVisible == "hidden" ? setIsVisible("block") : setIsVisible("hidden");
