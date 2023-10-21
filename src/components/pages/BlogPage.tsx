@@ -23,7 +23,7 @@ function BlogPage() {
   return (
     <>
     <div className="w-full">
-      <div className="flex flex-col mx-auto container text-[#9c9c9c] ">
+      <div className="flex flex-col mx-auto container text-[#333] ">
         <div className="lg:mx-40 mx-4 my-16">
           <h2 className="lg:text-5xl text-4xl w-[90%] lg:w-[55%] font-normal text-black leading-snug">
             {posts[0].title}

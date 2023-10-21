@@ -1,6 +1,14 @@
 import Button from "../../inputs/Button";
 
 function VideoHome() {
+  function getYoutubeUrl(videoId: string, startTime: number) {
+    return `http://www.youtube.com/embed/${videoId}?start=${startTime}`;
+  }
+
+  const videoId = "RJSF3EOO_Uc";
+  const startTime = 0;
+  const url = getYoutubeUrl(videoId, startTime);
+
   return (
     <>
       <div className="mx-auto container flex flex-col items-center text-start md:my-24 my-12 justify-center">
@@ -20,12 +28,8 @@ function VideoHome() {
               classname="bg-[var(--primary-color)] md:self-start sm:ml-0 lg:ml-0 md:ml-6 self-center text-white text-sm w-[90vw] md:w-[9.5rem]"
             />
           </div>
-          <video controls className="lg:w-1/3 w-[94vw] aspect-video">
-            <source
-              src="https://www.youtube.com/watch?v=f4GILQeV3o8&t=871s&ab_channel=%EC%A0%88%EC%84%B8%EB%AF%B8%EB%85%80"
-              type="video/mp4"
-            />
-          </video>
+          <div id="player"></div>
+          <iframe width="560" height="315" src={url}></iframe>
         </div>
       </div>
     </>

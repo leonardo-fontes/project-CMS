@@ -20,7 +20,7 @@ function FormLogin() {
         if (email && password) {
             const isLogged = await auth.signin(email, password);
             if (isLogged) {
-                navigate('/');
+                navigate('/private');
             } else {
                 alert('deu errado o login');
             }
