@@ -1,4 +1,4 @@
-import Button from "../inputs/Button";
+import Links from "../inputs/Link";
 import Container from "../layout/Container";
 
 interface Post {
@@ -90,7 +90,7 @@ function BlogPage() {
       <Container classname="bg-[#f8f8f8]">
           <div className="flex flex-col justify-center items-center w-full py-20 lg:py-40">
           <h2 className="font-bold md:text-5xl text-2xl text-black md:w-[80%] lg:w-[50%] text-center pb-12">Conheça a vida e história de pessoas com deficiência</h2>
-          <Button
+          <Links
             text="Seja Acesse-me"
             link="/login"
             classname="bg-[var(--primary-color)] text-white text-sm w-[80%] md:w-[9.5rem]"

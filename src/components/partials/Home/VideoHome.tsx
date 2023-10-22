@@ -1,4 +1,4 @@
-import Button from "../../inputs/Button";
+import Links from "../../inputs/Link";
 
 function VideoHome() {
   function getYoutubeUrl(videoId: string, startTime: number) {
@@ -22,7 +22,7 @@ function VideoHome() {
               doenças raras trocam informações. Além de estabelecer uma ponte
               com profissionais de saúde e especialistas.
             </p>
-            <Button
+            <Links
               link="/login"
               text="Quero fazer parte"
               classname="bg-[var(--primary-color)] md:self-start sm:ml-0 lg:ml-0 md:ml-6 self-center text-white text-sm w-[90vw] md:w-[9.5rem]"

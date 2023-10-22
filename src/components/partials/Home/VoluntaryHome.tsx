@@ -1,4 +1,4 @@
-import Button from "../../inputs/Button";
+import Links from "../../inputs/Link";
 
 function VoluntaryHome() {
   return (
@@ -9,7 +9,7 @@ function VoluntaryHome() {
         Acesse-me. Sua ajuda poderá impactar positivamente a vida de pessoas com
         deficiência e doenças raras. Faça parte da transformação!
       </p>
-      <Button
+      <Links
         text="Quero ser uma pessoa voluntária"
         link="https://docs.google.com/forms/d/e/1FAIpQLSeO6uJBKhVrm7aQHnvXUlxeocIXRovzkLQ3ZHpMX-pQt-6gYA/viewform?vc=0&c=0&w=1&flr=0"
         classname="md:w-80 w-[22rem] bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"

@@ -1,10 +1,33 @@
 import Button from "../inputs/Button";
 import Input from "../inputs/Input";
 import { Link } from "react-router-dom";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Data = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  confirm_email: string;
+  username: string;
+  password: string;
+  birthdate: string;
+  mobilelogin: string;
+};
 
 function FormRegister() {
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm<Data>();
+
+  const handleRegister: SubmitHandler<Data> = async (data) => {
+    
+};
+
   return (
-    <form className="md:max-w-[500px] w-[94vw] bg-white shadow-2xl text-black md:p-10 p-5 rounded-3xl flex flex-col md:gap-2">
+    <form className="md:max-w-[500px] w-[94vw] bg-white shadow-2xl text-black md:p-10 p-5 rounded-3xl flex flex-col md:gap-2"
+    onSubmit={handleSubmit(handleRegister)}>
       <div className="flex md:mr-4 items-center justify-between">
         <div className="flex flex-col">
           <h3 className="font-semibold text-lg ">Bem vindo à Acesse-me!</h3>
@@ -21,11 +44,15 @@ function FormRegister() {
       <div className="flex flex-col gap-4">
         <div className="flex gap-8 md:justify-between">
           <Input
+            name="first_name"
+            register={register}
             className="border-[1px] md:w-48  w-full border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="nome"
             label="Nome"
           />
           <Input
+            name="last_name"
+            register={register}
             className="border-[1px] md:w-48 w-full border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="sobrenome"
             label="Sobrenome"
@@ -33,12 +60,16 @@ function FormRegister() {
         </div>
         <div className="flex flex-col gap-4">
           <Input
+            name="email"
+            register={register}
             type="email"
             className="border-[1px] border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="email"
             label="Email"
           />
           <Input
+            name="confirm_email"
+            register={register}
             type="email"
             className="border-[1px] border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="Confirme seu email"
@@ -47,11 +78,15 @@ function FormRegister() {
         </div>
         <div className="flex justify-between gap-4">
           <Input
+            name="username"
+            register={register}
             className="border-[1px] lg:w-48 w-full border-[#ADADAD] shad lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="Username"
             label="Usuario"
           />
           <Input
+            name="password"
+            register={register}
             type="password"
             className="border-[1px] lg:w-48 w-full border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="senha"
@@ -60,12 +95,16 @@ function FormRegister() {
         </div>
         <div className="flex justify-between lg:items-start items-end gap-4">
           <Input
+            name="birthdate"
+            register={register}
             type="date"
             className="border-[1px]  lg:w-48 w-full border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="00/00/0000"
             label="Data de Nascimento"
           />
           <Input
+            name="mobilelogin"
+            register={register}
             type="Number"
             className="border-[1px] lg:w-48 w-full border-[#ADADAD] lg:py-[19px] py-[12px] lg:px-[25px] px-[15px]  shadow-md"
             placeholder="(00)00000-0000"
@@ -89,7 +128,6 @@ function FormRegister() {
       <div className="flex items-center justify-between mt-4">
         <Button
           text="Registrar"
-          link=""
           classname="bg-[var(--primary-color)] rounded-xl text-white w-full"
         />
       </div>

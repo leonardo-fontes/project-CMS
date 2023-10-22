@@ -1,4 +1,3 @@
-import Button from "../inputs/Button";
 import ConnectionsHome from "../partials/Home/ConnectionsHome";
 import VideoHome from "../partials/Home/VideoHome";
 import CompanyHome from "../partials/Home/CompanyHome";
@@ -6,6 +5,7 @@ import AboutHome from "../partials/Home/AboutHome";
 import VoluntaryHome from "../partials/Home/VoluntaryHome";
 import MeetUsHome from "../partials/Home/MeetUsHome";
 import BlogHome from "../partials/Home/BlogHome";
+import Links from "../inputs/Link";
 
 function Home() {
     const primaryBg =
@@ -24,7 +24,7 @@ function Home() {
                             de pessoas com deficiência, doenças raras e sua rede
                             de apoio para transformar vidas.
                         </p>
-                        <Button
+                        <Links
                             link="/login"
                             text="Quero compartilhar minha história"
                             classname="w-80 px-4 lg:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"

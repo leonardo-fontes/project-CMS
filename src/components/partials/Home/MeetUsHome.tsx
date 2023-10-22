@@ -1,4 +1,4 @@
-import Button from "../../inputs/Button";
+import Links from "../../inputs/Link";
 
 function MeetUsHome() {
   return (
@@ -6,7 +6,7 @@ function MeetUsHome() {
       <h3 className="md:text-5xl lg:w-6/12 text-2xl text-center font-bold lg:leading-normal font-merriweather">
         Conheça a vida e história de pessoas com deficiência
       </h3>
-      <Button
+      <Links
         text="Seja Acesse-me"
         link="/login"
         classname="bg-[var(--primary-color)] text-white text-sm w-[80vw] md:w-[9.5rem]"

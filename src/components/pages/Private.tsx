@@ -41,8 +41,10 @@ function Private() {
   return (
     <>
       <div className="flex w-full">
-        <div className="w-[50%] flex flex-col"><h1>
-            bom dia</h1></div>
+        <div className="w-[50%] flex flex-col">
+          <img src="/images/user1.jpeg" alt="" />
+          <h1>bom dia</h1>
+        </div>
         <div className="w-[50%]">
           <VerticalTimeline lineColor="var(--primary-color)">
             {galhos.map((galho) => (

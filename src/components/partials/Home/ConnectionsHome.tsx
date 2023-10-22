@@ -1,4 +1,4 @@
-import Button from "../../inputs/Button";
+import Links from "../../inputs/Link";
 
 function ConnectionsHome() {
   return (
@@ -36,7 +36,7 @@ function ConnectionsHome() {
               </p>
             </div>
           </div>
-          <Button
+          <Links
             link="/register"
             text="Quero fazer o meu cadastro"
             classname="md:w-64 w-[80vw] ml-0 md:ml-12 lg:ml-0 md:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"

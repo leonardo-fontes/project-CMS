@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
-import Login from "../../components/pages/Login";
+import {useNavigate } from "react-router-dom";
+import secureLocalStorage from "react-secure-storage";
 
 export const RequireAuth = ({children} :  {children: JSX.Element}) => {
 
     const auth = useContext(AuthContext);
-    //trocar o retorno pelo navigate
-    if(!auth.user) {
-        return <Login />;
+    //verificar o locastorage
+    const navigate = useNavigate();
+    if(!secureLocalStorage.getItem("token")) {
+        navigate("/login")
     }
 
     return children;
