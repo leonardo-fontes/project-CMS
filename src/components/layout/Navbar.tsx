@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 function Navbar() {
-    const pages = ["login", "register"];
+    const pages = ["login", "register, private"];
     const [isVisible, setIsVisible] = useState("hidden");
     const { pathname } = useLocation();
     const navigate = useNavigate();
