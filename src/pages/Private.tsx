@@ -1,8 +1,6 @@
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/Auth/AuthContext";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import Galho from "../lifeline/galho";
+import Galho from "../components/lifeline/galho";
 
 interface Galhos {
   description: string;
@@ -12,7 +10,6 @@ interface Galhos {
 }
 
 function Private() {
-  const auth = useContext(AuthContext);
 
   const galhos: Array<Galhos> = [
     {

@@ -9,7 +9,7 @@ export type User = {
 };
 
 export type AuthContextType = {
-    user: User | null;
+    user: string | null;
     signin: (data: SigninData) => Promise<boolean>;
     signout: () => void;
 };

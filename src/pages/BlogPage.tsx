@@ -1,5 +1,5 @@
-import Links from "../inputs/Link";
-import Container from "../layout/Container";
+import Links from "../components/inputs/Link";
+import Container from "../components/layout/Container";
 
 interface Post {
   title: string;

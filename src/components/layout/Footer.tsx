@@ -2,7 +2,7 @@ import Container from "./Container";
 import SocialIcons from "../inputs/SocialIcons";
 import { Link, useLocation } from "react-router-dom";
 function Footer() {
-    const pages = ["login", "register"];
+    const pages = ["login", "register", "plataform"];
     const { pathname } = useLocation();
     return !pages.filter((page) => pathname.includes(page)).length ? (
         <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
@@ -20,7 +20,7 @@ function Footer() {
                     <h4 className="font-semibold text-2xl">Acesse-me</h4>
                     <ul className="flex flex-col md:gap-3 gap-2">
                         <li>
-                        <Link className="hover:underline" to="/about">
+                            <Link className="hover:underline" to="/about">
                                 Sobre
                             </Link>
                         </li>

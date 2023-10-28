@@ -1,37 +1,57 @@
-import { User } from "../Auth/AuthContext";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import api, { SigninData } from "../../service/api";
 import secureLocalStorage from "react-secure-storage";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export const AuthProvider = ({ children }: { children: JSX.Element }) => {
-  const [user, setUser] = useState<User | null>(null);
+export const AuthProvider = ({
+    children,
+}: {
+    children: JSX.Element | JSX.Element[];
+}) => {
+    const [user, setUser] = useState<string | null>(null);
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
 
-  const validateToken = useCallback(async () => {
-    //
-    //     const data = await api.validateToken(storageData);
-    //     if (data.user) {
-    //         setUser(data.user);
-    //     }
-    //
-  }, []);
+    // persist user
+    useEffect(() => {
+        const user = secureLocalStorage.getItem("user");
+        setUser(user as string);
+    }, []);
 
-  useEffect(() => {
-    validateToken();
-  }, [validateToken]);
+    // validate user
+    useEffect(() => {
+        if (
+            pathname.startsWith("/plataform") &&
+            !(user || secureLocalStorage.getItem("user"))
+        ) {
+            navigate("/login");
+        } else if (pathname === "/plataform") {
+            navigate("/plataform/me");
+        } else if (
+            ["login", "register"].filter((page) => pathname.includes(page))
+                .length &&
+            (user || secureLocalStorage.getItem("user"))
+        ) {
+            navigate("/plataform");
+        }
+    }, [navigate, pathname, user]);
 
-  const signin = async (data: SigninData) => {
-    return await api.signin(data);
-  };
+    const signin = async (data: SigninData) => {
+        const response = await api.signin(data);
+        setUser(secureLocalStorage.getItem("user") as string);
+        return response;
+    };
 
-  const signout = async () => {
-    setUser(null);
-    secureLocalStorage.removeItem("token");
-  };
+    const signout = async () => {
+        setUser(null);
+        secureLocalStorage.removeItem("token");
+        secureLocalStorage.removeItem("user");
+    };
 
-  return (
-    <AuthContext.Provider value={{ user, signin, signout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+    return (
+        <AuthContext.Provider value={{ user, signin, signout }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };

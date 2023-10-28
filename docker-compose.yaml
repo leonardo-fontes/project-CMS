@@ -1,0 +1,7 @@
+version: "3"
+services:
+    acesse_me-app:
+        build: .
+        restart: always
+        ports:
+            - 8080:8080

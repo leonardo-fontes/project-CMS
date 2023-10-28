@@ -1,5 +1,5 @@
-import Container from "../layout/Container";
-import MeetUsHome from "../partials/Home/MeetUsHome";
+import Container from "../components/layout/Container";
+import MeetUsHome from "../components/partials/Home/MeetUsHome";
 
 function Terms() {
     return (

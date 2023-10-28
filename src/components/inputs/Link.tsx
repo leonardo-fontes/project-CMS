@@ -1,17 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link as LinkRouter } from "react-router-dom";
 
-type String = {
+type Props = {
     link: string;
     text: string;
-    classname: string
-}
+    classname: string;
+};
 
-function Links ({link, text, classname} : String) {
+function Link({ link, text, classname }: Props) {
     return (
-        <Link className={`flex items-center justify-center rounded-3xl p-3 hover:shadow-lg transition duration-150 ${classname}`} to={link}>
+        <LinkRouter
+            className={`flex items-center justify-center rounded-3xl p-3 hover:shadow-lg transition duration-150 ${classname}`}
+            to={link}
+        >
             {text}
-        </Link>
-    )
+        </LinkRouter>
+    );
 }
 
-export default Links
+export default Link;

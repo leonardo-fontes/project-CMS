@@ -1,11 +1,11 @@
-import ConnectionsHome from "../partials/Home/ConnectionsHome";
-import VideoHome from "../partials/Home/VideoHome";
-import CompanyHome from "../partials/Home/CompanyHome";
-import AboutHome from "../partials/Home/AboutHome";
-import VoluntaryHome from "../partials/Home/VoluntaryHome";
-import MeetUsHome from "../partials/Home/MeetUsHome";
-import BlogHome from "../partials/Home/BlogHome";
-import Links from "../inputs/Link";
+import ConnectionsHome from "../components/partials/Home/ConnectionsHome";
+import VideoHome from "../components/partials/Home/VideoHome";
+import CompanyHome from "../components/partials/Home/CompanyHome";
+import AboutHome from "../components/partials/Home/AboutHome";
+import VoluntaryHome from "../components/partials/Home/VoluntaryHome";
+import MeetUsHome from "../components/partials/Home/MeetUsHome";
+import BlogHome from "../components/partials/Home/BlogHome";
+import Links from "../components/inputs/Link";
 
 function Home() {
     const primaryBg =

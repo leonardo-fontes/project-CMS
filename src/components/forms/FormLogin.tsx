@@ -1,9 +1,6 @@
 import Button from "../inputs/Button";
 import Input from "../inputs/Input";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { BsApple } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
@@ -14,18 +11,26 @@ type Inputs = {
 };
 
 function FormLogin() {
+    const [searchParams] = useSearchParams();
     const auth = useContext(AuthContext);
     const navigate = useNavigate();
     const {
         register,
         handleSubmit,
+        watch,
         // formState: { errors },
-    } = useForm<Inputs>();
+    } = useForm<Inputs>({
+        defaultValues: {
+            email: searchParams.get("email") ?? "",
+        },
+    });
+
+    const email = watch("email");
 
     const handleLogin: SubmitHandler<Inputs> = async (data) => {
         const isLogged = await auth.signin(data);
         if (isLogged) {
-            navigate("/private");
+            navigate("/plataform");
         } else {
             alert("deu errado o login");
         }
@@ -33,79 +38,84 @@ function FormLogin() {
 
     return (
         <form
-            className="md:max-w-[600px] max-w-[96vw] w-full bg-[white] shadow-2xl text-black md:p-10 p-4 rounded-3xl flex flex-col gap-2"
+            className="bg-white text-black p-10 flex flex-col font-nunito w-full  lg:max-w-[500px]"
             onSubmit={handleSubmit(handleLogin)}
         >
-            <div className="flex items-start justify-between pb-4">
-                <div className="flex flex-col">
-                    <h3 className="font-normal md:text-lg text-md ">
-                        Bem vindo à Acesse-me!
+            <div className="flex items-start justify-between">
+                <div className="flex flex-col gap-6">
+                    <h3 className="font-black text-2xl text-primary flex gap-[10px] items-center">
+                        <Link to="/">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="43"
+                                viewBox="0 0 40 43"
+                                fill="none"
+                            >
+                                <path
+                                    className="fill-primary"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M15.9618 0.0922628C8.06415 1.32946 1.92648 7.76964 0.421859 16.3982C-0.715714 22.9215 0.466449 29.2866 3.73735 34.2484C4.7362 35.7634 7.20524 38.2839 8.66675 39.2802C14.0437 42.9457 21.0574 43.4117 26.4307 40.4605C27.7889 39.7145 28.5895 39.1563 29.7822 38.124L30.8575 37.1932L30.9424 37.8325C31.1391 39.3155 32.4548 40.9257 33.8338 41.3711C34.7342 41.6619 36.151 41.6613 37.0682 41.3696C38.0717 41.0505 39.3043 39.824 39.7085 38.7421L40 37.962L39.9647 20.5303L39.9292 3.09869L39.6141 2.46449C39.1878 1.60693 38.3419 0.786054 37.4518 0.36611C36.8203 0.0682925 36.5339 0.0187453 35.4431 0.0187453C34.3208 0.0187453 34.081 0.0629362 33.4073 0.393696C32.0465 1.06204 30.8902 2.7374 30.8902 4.04116C30.8902 4.29612 30.8609 4.50476 30.8248 4.50476C30.7889 4.50476 30.232 4.11467 29.5872 3.63795C27.4779 2.07816 24.7395 0.83627 22.1746 0.276255C20.9993 0.0196822 17.1525 -0.094275 15.9618 0.0922628ZM22.6547 11.7947C25.2112 12.655 27.1681 14.3642 28.2691 16.6987C28.9126 18.0627 29.1116 18.9282 29.276 21.0773C29.4885 23.8571 29.7016 29.3471 29.6064 29.5951C29.4351 30.0413 28.942 29.8045 27.7019 28.6807L26.4555 27.5512L25.6496 28.2004C24.6153 29.034 23.4232 29.617 22.0371 29.9676C21.1207 30.1993 20.661 30.2356 19.3172 30.1824C16.6442 30.0766 15.0471 29.3657 13.0735 27.4035C11.8115 26.1489 11.1869 25.1138 10.6497 23.3862C10.389 22.5476 10.3392 22.1055 10.3481 20.708C10.3574 19.2785 10.4104 18.8777 10.7117 17.9628C11.7962 14.6697 14.3957 12.3195 17.8339 11.524C19.1162 11.2272 21.3393 11.352 22.6547 11.7947Z"
+                                />
+                            </svg>
+                        </Link>
+                        acesse-me
                     </h3>
-                    <p className="font-medium text-[3.45rem]">Login</p>
-                </div>
-                <div className="flex flex-col font-normal text-base">
-                    <p>Não é registrado?</p>
                     <Link
-                        className="text-[var(--primary-color)]"
+                        className="text-sm font-normal text-blue-3 underline"
                         to="/register"
                     >
-                        Criar conta
+                        Não tem uma conta? Fazer cadastro
                     </Link>
                 </div>
             </div>
 
-            <div className="flex flex-col gap-9">
-                <Input
-                    register={register}
-                    name="email"
-                    type="text"
-                    placeholder="Digite seu email"
-                    label="Email"
-                />
-                <Input
-                    register={register}
-                    name="password"
-                    type="password"
-                    placeholder="Digite sua senha"
-                    label="Senha"
-                />
+            <div className="flex flex-col gap-10 mt-4 mb-8">
+                <div className="flex flex-col gap-5">
+                    <p className="font-black font-nunito text-2xl">Login</p>
+                    <Input
+                        register={register}
+                        name="email"
+                        type="text"
+                        label="E-mail"
+                    />
+                    <Input
+                        containerClassName="mt-5"
+                        register={register}
+                        name="password"
+                        type="password"
+                        label="Senha"
+                    />
+                </div>
+                <Link
+                    className="text-sm text-center text-blue-3 font-normal underline py-2"
+                    to={`/forgot-password?email=${email}`}
+                >
+                    Esqueceu a senha?
+                </Link>
+                <div className="flex items-center justify-between">
+                    <Button
+                        type="submit"
+                        text="Entrar"
+                        classname="bg-primary rounded-full text-white text-xl leading-5 font-bold font-nunito-sans w-full py-[1.375rem]"
+                    />
+                </div>
             </div>
-            <a
-                className="text-end text-[var(--primary-color)] mt-[7px]"
-                href="https://acesseme.com.br/resetlogin"
-            >
-                Esqueceu a senha?
-            </a>
-            <div className="flex items-center justify-between mt-4">
-                <Button
-                    type="submit"
-                    text="Entrar"
-                    classname="bg-[var(--primary-color)] rounded-xl text-white w-full"
-                />
-            </div>
-            <p className="text-center mt-4 text-[#9c9c9c]">OU</p>
-            <div className="flex gap-3 mt-4">
-                <button
-                    type="button"
-                    className="w-full flex items-center md:px-10 px-4 gap-5 rounded-md py-3 bg-[#e2d8ff]"
+            <div className="text-center text-gray-3 font-nunito-sans py-2">
+                <Link
+                    className="text-sm text-center font-normal underline py-2"
+                    to="/terms"
                 >
-                    <FcGoogle size={28} />
-                    <p className="text-[var(--gradient-color)] text-sm">
-                        Entre com a google
-                    </p>
-                </button>
-                <button
-                    type="button"
-                    className="w-[3.5rem] flex items-center justify-center  gap-5 rounded-md py-3 bg-[#f0efef]"
+                    Termos e Condições
+                </Link>{" "}
+                -{" "}
+                <Link
+                    className="text-sm text-center font-normal underline py-2"
+                    to="/privacy-policies"
                 >
-                    <FaFacebook color="#1877f2" size={28} />
-                </button>
-                <button
-                    type="button"
-                    className="w-[3.5rem] flex items-center justify-center  gap-5 rounded-md py-3 bg-[#f0efef]"
-                >
-                    <BsApple color="black" size={28} />
-                </button>
+                    Políticas de Privacidade
+                </Link>
             </div>
         </form>
     );

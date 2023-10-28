@@ -1,5 +1,8 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import secureLocalStorage from "react-secure-storage";
+import { CircleProfessionals } from "../types/CircleProfessionals";
+import { RegisterData } from "../components/forms/FormRegister";
+import { format } from "date-fns";
 
 export type SigninData = {
     email: string;
@@ -14,39 +17,92 @@ export type SignupData = SigninData & {
     mobilelogin: string;
 };
 
-const apiV2 = axios.create({
-    baseURL: "https://dev.acesseme.i9cloud.intercompany.com.br/backend-demo",
+const token = secureLocalStorage.getItem("token");
+
+const api = axios.create({
+    baseURL: "https://acesseme.i9cloud.intercompany.com.br/nodered",
     headers: {
-        x_ic_auth:
-            "ca7f820238563a2471629e5c348d5b4dc54c1d590bd9e9ad1e64af28e24510a4",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        Authorization: token ? `Bearer ${token}` : null,
     },
 });
 
 export default {
     validateToken: async (token: string) => {
-        const response = await apiV2.post("/validate", { token });
+        const response = await api.post("/validate", { token });
         return response.data;
     },
     signin: async (data: SigninData) => {
         try {
-            const response = await apiV2.post("/auth", data);
-            apiV2.defaults.headers.common[
+            const response = await api.post("/auth", data);
+            api.defaults.headers.common[
                 "Authorization"
             ] = `Bearer ${response.data.token}`;
             secureLocalStorage.setItem("token", response.data.token);
+            secureLocalStorage.setItem("user", response.data.id);
             return true;
         } catch (e) {
             return false;
         }
     },
-    signup: async (data: SignupData) => {
-        const response = await apiV2.post("/user", data);
-        delete apiV2.defaults.headers.common.Authorization;
-        secureLocalStorage.removeItem("token");
-        return response.data;
+    register: async (data: RegisterData) => {
+        const time_created = format(new Date(), "dd/MM/yyyy HH:mm:ss");
+        const body = {
+            type: "user",
+            username: data.username,
+            email: data.email,
+            name: data.name,
+            password: data.password,
+            time_created,
+            photo_profile: "",
+            photo_cover: "",
+            infos_about: {
+                about: "",
+                beapart: "",
+                biography: "",
+                birthdate: data.birthdate,
+                cause: "",
+                commercialpartner: "",
+                disability: null,
+                gender: "",
+                interests: "",
+                location: "",
+                mobilelogin: data.mobilelogin,
+                profession: "",
+                studies: "",
+                challenge: null,
+                adaptations: null,
+                social_networks: null,
+                theinterests: "",
+            },
+        };
+        try {
+            const response = await api.post("/crud/v1/users", body);
+            console.log(response.data);
+            return true;
+        } catch (e) {
+            return false;
+        }
     },
-    logout: async () => {
-        const response = await apiV2.post("/logout");
-        return response.data;
+    async getUser() {
+        try {
+            const user = secureLocalStorage.getItem("user");
+            const response = await api.get(`/crud/v1/users/${user}`);
+            const life = await api.get(`/crud/v1/${user}/life/_id/50/0`);
+            const circleProfessionals = (
+                await api.get<CircleProfessionals[]>(
+                    `/crud/v1/${user}/circles/_id/50/0`,
+                )
+            ).data.filter(({ subtype }) => subtype === "circles_professionals");
+            return {
+                ...response.data,
+                life: life.data,
+                circleProfessionals,
+            };
+        } catch (err) {
+            const error = err as AxiosError;
+            return { error: error.message };
+        }
     },
 };
