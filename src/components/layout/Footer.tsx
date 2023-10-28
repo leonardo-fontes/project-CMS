@@ -5,8 +5,9 @@ function Footer() {
     const pages = ["login", "register", "plataform"];
     const { pathname } = useLocation();
     return !pages.filter((page) => pathname.includes(page)).length ? (
-        <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white">
+        <Container classname="bg-[var(--primary-color)] bg-gradient-to-b relative from-[var(--primary-color)] to-[var(--gradient-color)]  text-white">
             <div className="container mx-auto flex lg:flex-row flex-col lg:items-start items-center py-16 justify-evenly">
+                <img className="absolute bottom-0 left-0" src="/images/footer.webp" alt="" />
                 <div className="flex flex-col lg:items-start items-center lg:mb-0 mb-12">
                     <img
                         className="object-contain w-16 mb-4"

@@ -8,7 +8,7 @@ interface User {
 function UserCard({ name, title, description, photo }: User) {
   return (
     <>
-      <div className="flex flex-col relative gap-6 lg:min-w-full max-w-[80vw] border-solid border-[3px] border-[var(--primary-color)] rounded-2xl lg:px-12 px-6 pb-12 md:pt-20 pt-12">
+      <div className="flex flex-col relative gap-6 min-h-[280px] border-solid border-[3px] border-[var(--primary-color)] rounded-2xl px-6 pb-4 md:pt-20 pt-12">
         <p className="lg:w-[30rem]">{description}</p>
         <p className="font-bold">{`${name} - ${title}`}</p>
         <img

@@ -1,20 +1,19 @@
-
-interface User{
+interface User {
   photo?: string;
-  handleClick:()=>void;
+  border: string;
+  classname: string;
+  handleClick: () => void;
 }
 
-function UserImage({photo, handleClick}:User) {
-
+function UserImage({ photo, border, classname, handleClick }: User) {
   return (
-    <div onClick={handleClick}
-     className="md:w-32 aspect-video lg:px-6 py-2 flex items-center justify-center rounded-2xl hover:shadow-2xl">
-              <img
-                className="md:w-20 w-12 aspect-square object-cover rounded-full"
-                src={`/images/${photo}`}
-                alt=""
-              />
-            </div>
+    <div onClick={handleClick} className={`flex items-center justify-center `}>
+      <img
+        className={`${classname} transition-all duration-300 border-4 ${border} cursor-pointer absolute aspect-square object-cover rounded-full`}
+        src={`/images/${photo}`}
+        alt=""
+      />
+    </div>
   );
 }
 export default UserImage;
