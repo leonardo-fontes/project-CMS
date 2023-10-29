@@ -18,7 +18,7 @@ function ConnectionsHome() {
             <img
               className="md:w-20 w-8 object-contain"
               src="/images/lifeline_icon.webp"
-              alt=""
+              alt="" aria-hidden={true}
             />
             <div className="flex flex-col">
               <h4 className="md:text-3xl text-lg font-semibold">Linha da vida</h4>
@@ -34,7 +34,7 @@ function ConnectionsHome() {
             <img
               className="md:w-20 w-8 object-contain"
               src="/images/circles_icon.webp"
-              alt=""
+              alt="" aria-hidden={true}
             />
             <div className="flex flex-col gap-1">
               <h4 className="md:text-3xl text-lg font-semibold">Círculos</h4>
