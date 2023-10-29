@@ -3,7 +3,7 @@ import Links from "../../inputs/Link";
 function CompanyHome() {
   return (
     <>
-      <div className="flex mx-auto container justify-around py-12 items-center">
+      <div className="flex px-3 mx-auto container justify-around py-12 items-center">
         <div className="flex flex-col lg:mx-0 md:mx-12 mx-4 gap-8">
           <h3 className="text-4xl font-bold font-merriweather">
             Seja uma <br /> empresa parceira

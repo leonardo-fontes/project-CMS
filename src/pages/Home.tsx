@@ -10,7 +10,7 @@ import Organizations from "../components/partials/Home/Organizations";
 
 function Home() {
   const primaryBg =
-    "bg-gradient-to-b from-[var(--primary-color)] to-[var(--gradient-color)] text-white";
+    "bg-gradient-to-b from-[var(--gradient-color)] to-[var(--primary-color)] text-white";
   const imageBg = "bg-[length:100%_100%] bg-[url('/images/bg_home.webp')]";
   const secondaryBg = "bg-white text-[#1a1b1f]";
 
@@ -20,21 +20,21 @@ function Home() {
         <div
           className={`flex md:h-screen lg:flex-row flex-col pb-32 ${
             window.innerWidth > 1200 ? imageBg : primaryBg
-          } text-white justify-between items-center px-60`}
+          } text-white justify-between items-center lg:pt-0 pt-12 px-20 lg:px-60`}
         >
           <div className="flex flex-col text-start md:items-start items-center gap-4">
             <h4 className="font-semibold font-merriweather md:text-7xl text-5xl ">
               Transforme <br /> vidas com sua <br />história
             </h4>
-            <p className="text-base leading-relaxed">
-              Faça parte da plataforma que conecta as experiências <br /> de pessoas
-              com deficiência, doenças raras e sua rede <br /> de apoio para
+            <p className="text-base leading-relaxed whitespace-pre-wrap">
+              Faça parte da plataforma que conecta as experiências  de pessoas
+              com deficiência, doenças raras e sua rede de apoio para
               transformar vidas.
             </p>
             <Links
               link="/login"
               text="Quero compartilhar minha história"
-              classname="w-80 px-4 mt-5 lg:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
+              classname="w-80 mt-5 lg:self-start bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
             />
           </div>
           <img

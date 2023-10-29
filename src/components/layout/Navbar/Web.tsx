@@ -29,7 +29,7 @@ function Web() {
   return (
     <>
       {!pages.filter((page) => pathname.includes(page)).length ? (
-        <div className="w-full z-10 md:pt-[80px] pt-1 md:border-none border-b-[1px] border-white flex justify-center bg-[var(--gradient-color)]">
+        <div className="w-full z-10 md:pt-[80px] pt-1 md:border-none border-b-[1px] border-white flex justify-center ${} bg-[var(--gradient-color)]">
           <div className="container flex justify-between px-3 md:justify-around items-center lg:m-0 m-4 lg:pt-4">
             <Link to="/">
               <img
