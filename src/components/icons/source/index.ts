@@ -5,8 +5,10 @@ import Linkedin from "./social_networks/linkedin";
 import Tiktok from "./social_networks/tiktok";
 import Twitter from "./social_networks/twitter";
 import Search from "./search";
+import Clear from "./clear";
 
 export default {
+    clear: Clear,
     facebook: Facebook,
     instagram: Instagram,
     linkedin: Linkedin,

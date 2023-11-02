@@ -2,7 +2,6 @@ import axios, { AxiosError } from "axios";
 import secureLocalStorage from "react-secure-storage";
 import { CircleProfessionals } from "../types/CircleProfessionals";
 import { RegisterData } from "../components/forms/FormRegister";
-import { format } from "date-fns";
 
 export type SigninData = {
     email: string;
@@ -47,14 +46,12 @@ export default {
         }
     },
     register: async (data: RegisterData) => {
-        const time_created = format(new Date(), "dd/MM/yyyy HH:mm:ss");
         const body = {
             type: "user",
             username: data.username,
             email: data.email,
             name: data.name,
             password: data.password,
-            time_created,
             photo_profile: "",
             photo_cover: "",
             infos_about: {
@@ -78,7 +75,12 @@ export default {
             },
         };
         try {
-            const response = await api.post("/crud/v1/users", body);
+            const response = await api.post("/register", body, {
+                headers: {
+                    x_ic_auth:
+                        "ca7f820238563a2471629e5c348d5b4dc54c1d590bd9e9ad1e64af28e24510a4",
+                },
+            });
             console.log(response.data);
             return true;
         } catch (e) {

@@ -3,6 +3,11 @@ import Input from "../inputs/Input";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import api from "../../service/api";
+import { useAuth } from "../../hooks/useAuth";
+import schema from "../../validator/auth/register";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AnyObject, ObjectSchema } from "yup";
+import Icon from "../icons";
 
 export type RegisterData = {
     name: string;
@@ -16,16 +21,25 @@ export type RegisterData = {
 
 function FormRegister() {
     const navigate = useNavigate();
+    const auth = useAuth();
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<RegisterData>();
+        watch,
+    } = useForm<RegisterData>({
+        resolver: yupResolver<RegisterData>(
+            schema as unknown as ObjectSchema<RegisterData, AnyObject, "">,
+        ),
+    });
+
+    const agree = watch("agree");
+
     const handleRegister: SubmitHandler<RegisterData> = async (data) => {
         try {
             await api.register(data);
-            await api.signin({ email: data.email, password: data.password });
-            navigate("/plataform/me");
+            await auth.signin({ email: data.email, password: data.password });
+            navigate("/plataform");
         } catch (err) {
             console.log(err);
         }
@@ -72,19 +86,22 @@ function FormRegister() {
                     <Input
                         name="name"
                         register={register}
+                        error={errors.name?.message}
                         placeholder="nome"
                         label="Nome completo"
                     />
                 </div>
                 <Input
-                    register={register}
                     name="email"
+                    register={register}
+                    error={errors.email?.message}
                     type="email"
                     label="E-mail"
                 />
                 <Input
                     name="mobilelogin"
                     register={register}
+                    error={errors.mobilelogin?.message}
                     type="tel"
                     placeholder="(00)00000-0000"
                     label="Telefone"
@@ -92,6 +109,7 @@ function FormRegister() {
                 <Input
                     name="birthdate"
                     register={register}
+                    error={errors.birthdate?.message}
                     type="date"
                     placeholder="00/00/0000"
                     label="Data de Nascimento"
@@ -99,54 +117,64 @@ function FormRegister() {
                 <Input
                     name="username"
                     register={register}
+                    error={errors.username?.message}
                     placeholder="Username"
                     label="Nome de usuário"
                 />
                 <Input
-                    register={register}
                     name="password"
+                    register={register}
+                    error={errors.password?.message}
                     type="password"
                     label="Senha"
                 />
             </div>
             <div
-                className={`transition-all mt-5 mb-4 flex gap-2 p-4 border-[1px] rounded-lg ${
-                    errors?.agree
-                        ? "border-[#800D0D] bg-[#FFEDED]"
-                        : "border-[#EDF0F2] bg-[#FAFBFC]"
+                className={`${errors.password ? "mt-5" : "mt-10"} ${
+                    errors?.agree ? "mb-5" : " mb-10"
                 }`}
             >
-                <input
-                    type="checkbox"
-                    {...register("agree", {
-                        required:
-                            "É obrigatório aceitar os nossos termos e políticas.",
-                    })}
-                />
-                <label
-                    className="ml-2 font-nunito-sans text-sm  font-semibold"
-                    htmlFor="agree"
+                <div
+                    className={`transition-all flex gap-2 p-4 border-[1px] rounded-lg ${
+                        errors?.agree
+                            ? "border-[#800D0D] bg-[#FFEDED]"
+                            : agree
+                            ? "border-[#6F3DFF] bg-[#F3F0FA]"
+                            : "border-[#EDF0F2] bg-[#FAFBFC]"
+                    }`}
                 >
-                    Li e concordo com os{" "}
-                    <Link
-                        className="underline  text-blue-3 font-bold"
-                        target="_blank"
-                        to="/terms"
+                    <input type="checkbox" {...register("agree")} />
+                    <label
+                        className="ml-2 font-nunito-sans text-sm  font-semibold"
+                        htmlFor="agree"
                     >
-                        termos e condições
-                    </Link>
-                    <span className="mx-1">e</span>
-                    <Link
-                        className="underline text-blue-3 font-bold"
-                        target="_blank"
-                        to="/privacy-policies"
-                    >
-                        política de privacidade
-                    </Link>
-                    <span className="font-normal">.</span>
-                </label>
+                        Li e concordo com os{" "}
+                        <Link
+                            className="underline  text-blue-3 font-bold"
+                            target="_blank"
+                            to="/terms"
+                        >
+                            termos e condições
+                        </Link>
+                        <span className="mx-1">e</span>
+                        <Link
+                            className="underline text-blue-3 font-bold"
+                            target="_blank"
+                            to="/privacy-policies"
+                        >
+                            política de privacidade
+                        </Link>
+                        <span className="font-normal">.</span>
+                    </label>
+                </div>
+                {errors?.agree?.message && (
+                    <span className="mt-2 flex gap-2 items-center text-[#800D0D] text-xs font-normal">
+                        <Icon name="clear" className="mr-2" />
+                        {errors?.agree?.message}
+                    </span>
+                )}
             </div>
-            <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center justify-between">
                 <Button
                     type="submit"
                     text="Cadastrar"
