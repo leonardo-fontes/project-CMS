@@ -5,7 +5,7 @@ import Web from "./Web";
 
 const Navbar: React.FC = () => {
     const { pathname } = useLocation();
-    return pathname.includes("plataform") ? <Plataform /> : <Web />;
+    return pathname.includes("plataform") || pathname.includes("empresa") ? <Plataform /> : <Web />;
 };
 
 export default Navbar;

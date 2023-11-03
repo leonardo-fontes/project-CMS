@@ -2,7 +2,7 @@ import Container from "./Container";
 import SocialIcons from "../inputs/SocialIcons";
 import { Link, useLocation } from "react-router-dom";
 function Footer() {
-  const pages = ["login", "register", "plataform"];
+  const pages = ["login", "register", "plataform", "empresa"];
   const { pathname } = useLocation();
   return !pages.filter((page) => pathname.includes(page)).length ? (
     <Container classname="bg-[var(--primary-color)] bg-gradient-to-b relative from-[var(--primary-color)] to-[var(--gradient-color)]  text-white">

@@ -6,6 +6,12 @@ import Tiktok from "./social_networks/tiktok";
 import Twitter from "./social_networks/twitter";
 import Search from "./search";
 import Clear from "./clear";
+import Star from "./star";
+import option_vertical from "./options_vertical";
+import More from "./more";
+import edit from "./edit";
+import ProductPage from "../../../pages/Plataform/ProductPage";
+import product from "./product";
 
 export default {
     clear: Clear,
@@ -16,4 +22,9 @@ export default {
     tiktok: Tiktok,
     health_professional: HealthProfessional,
     search: Search,
+    star: Star,
+    options_vertical: option_vertical,
+    more: More,
+    edit: edit,
+    product: product
 };
