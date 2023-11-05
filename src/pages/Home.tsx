@@ -2,8 +2,6 @@ import ConnectionsHome from "../components/partials/Home/ConnectionsHome";
 import VideoHome from "../components/partials/Home/VideoHome";
 import CompanyHome from "../components/partials/Home/CompanyHome";
 import AboutHome from "../components/partials/Home/AboutHome";
-import VoluntaryHome from "../components/partials/Home/VoluntaryHome";
-import MeetUsHome from "../components/partials/Home/MeetUsHome";
 import BlogHome from "../components/partials/Home/BlogHome";
 import Links from "../components/inputs/Link";
 import Organizations from "../components/partials/Home/Organizations";

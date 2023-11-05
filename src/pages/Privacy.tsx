@@ -7,7 +7,7 @@ function Privacy() {
             <div className="flex flex-col w-full">
                 <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--gradient-color)] to-[var(--primary-color)] text-white">
                     <div className="flex flex-col container mx-auto md:items-center">
-                        <h2 className="md:text-6xl font-merriweather lg:ml-0 ml-4 text-4xl w-[92%] md:w-[72%] lg:leading-normal font-medium my-12 lg:my-24">
+                        <h2 className="md:text-6xl font-merriweather lg:ml-0 ml-4 text-4xl w-[92%] md:w-[72%] lg:leading-normal lg:py-12 font-medium my-12 lg:my-24">
                             Política de Privacidade e Segurança da Acesse-me
                         </h2>
                     </div>

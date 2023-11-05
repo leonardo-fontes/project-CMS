@@ -3,21 +3,21 @@ import { AuthContext } from "./AuthContext";
 import api, { SigninData } from "../../service/api";
 import secureLocalStorage from "react-secure-storage";
 import { useLocation, useNavigate } from "react-router-dom";
+import { UserProfile } from "../../types/User";
 
 export const AuthProvider = ({
     children,
 }: {
     children: JSX.Element | JSX.Element[];
 }) => {
-    const [user, setUser] = useState<string | null>(null);
+    const [user, setUser] = useState<UserProfile | string | null>(null);
     const { pathname } = useLocation();
     const navigate = useNavigate();
 
     // persist user
     useEffect(() => {
-        const user = secureLocalStorage.getItem("user");
-        setUser(user as string);
-    }, []);
+        if (!user && secureLocalStorage.getItem("user")) getUser();
+    }, [user]);
 
     // validate user
     useEffect(() => {
@@ -37,20 +37,25 @@ export const AuthProvider = ({
         }
     }, [navigate, pathname, user]);
 
+    const getUser = async () => {
+        const user = await api.getUser();
+        setUser(user);
+    };
+
     const signin = async (data: SigninData) => {
         const response = await api.signin(data);
-        setUser(secureLocalStorage.getItem("user") as string);
+        getUser();
         return response;
     };
 
     const signout = async () => {
-        setUser(null);
         secureLocalStorage.removeItem("token");
         secureLocalStorage.removeItem("user");
+        setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{ user, signin, signout }}>
+        <AuthContext.Provider value={{ user, setUser, signin, signout }}>
             {children}
         </AuthContext.Provider>
     );

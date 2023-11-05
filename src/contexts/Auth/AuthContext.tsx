@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { SigninData } from "../../service/api";
+import { UserProfile } from "../../types/User";
 
 export type User = {
     id: number;
@@ -9,7 +10,8 @@ export type User = {
 };
 
 export type AuthContextType = {
-    user: string | null;
+    user: UserProfile | string | null;
+    setUser: React.Dispatch<React.SetStateAction<string | UserProfile | null>>;
     signin: (data: SigninData) => Promise<boolean>;
     signout: () => void;
 };

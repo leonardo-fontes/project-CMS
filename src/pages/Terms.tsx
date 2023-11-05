@@ -7,7 +7,7 @@ function Terms() {
             <div className="flex flex-col w-full">
                 <Container classname="bg-[var(--primary-color)] bg-gradient-to-b from-[var(--gradient-color)] to-[var(--primary-color)] text-white">
                     <div className="flex flex-col container mx-auto md:items-center">
-                        <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[100%] text-center md:leading-normal font-normal font-merriweather my-12 lg:my-24">
+                        <h2 className="md:text-6xl lg:ml-0 ml-4 text-4xl w-[92%] md:w-[100%] text-center lg:py-12 md:leading-normal font-normal font-merriweather my-12 lg:my-24">
                             Termos Gerais de Uso da Acesse-me
                         </h2>
                     </div>

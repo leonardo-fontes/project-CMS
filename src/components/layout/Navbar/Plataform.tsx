@@ -91,7 +91,7 @@ const Plataform: React.FC = () => {
                     </svg>
                     <Button
                         text={`Sair`}
-                        handleClick={handleLogout}
+                        onClick={handleLogout}
                         classname="p-0 bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)] "
                     />
                 </div>

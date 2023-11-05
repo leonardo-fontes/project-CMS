@@ -23,7 +23,7 @@ function Web() {
     }
   };
 
-  function handleClick() {
+  function onClick() {
     isVisible == "hidden" ? setIsVisible("block") : setIsVisible("hidden");
   }
   return (
@@ -38,7 +38,7 @@ function Web() {
                 alt=""
               />
             </Link>
-            <button onClick={handleClick} className="lg:hidden block">
+            <button onClick={onClick} className="lg:hidden block">
               <HiMenu className="text-white" size={50} />
             </button>
             <div className="md:flex hidden text-white items-center justify-center gap-24">
@@ -48,7 +48,7 @@ function Web() {
               <Link to="#">Blog</Link>
               <Button
                 text={hasAuth ? `Sair` : `Entrar`}
-                handleClick={handleLogout}
+                onClick={handleLogout}
                 classname="w-20 lg:block hidden bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)] "
               />
             </div>

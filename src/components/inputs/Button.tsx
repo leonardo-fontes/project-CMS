@@ -1,7 +1,6 @@
 type Props = {
     text: string;
-    classname: string;
-    handleClick?: () => void;
+    classname?: string;
     type?: "button" | "submit";
 } & React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -9,7 +8,6 @@ type Props = {
 >;
 
 function Button({
-    handleClick,
     text,
     classname,
     type = "button",
@@ -19,7 +17,6 @@ function Button({
         <button
             {...props}
             type={type}
-            onClick={handleClick}
             className={`rounded-3xl p-3 hover:shadow-lg transition duration-150 ${classname}`}
         >
             {text}

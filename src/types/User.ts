@@ -1,3 +1,6 @@
+import { CircleProfessionals } from "./CircleProfessionals";
+import { LifeLine } from "./LifeLine";
+
 export type SocialNetworks =
     | "facebook"
     | "twitter"
@@ -6,6 +9,7 @@ export type SocialNetworks =
     | "tiktok";
 
 export type User = {
+    _id: string;
     email: string;
     first_name: string;
     last_name: string;
@@ -37,4 +41,9 @@ export type User = {
     time_created: string;
     type: string;
     username: string;
+};
+
+export type UserProfile = User & {
+    life?: LifeLine;
+    circleProfessionals?: CircleProfessionals[];
 };

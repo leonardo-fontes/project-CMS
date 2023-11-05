@@ -10,8 +10,9 @@ import Star from "./star";
 import option_vertical from "./options_vertical";
 import More from "./more";
 import edit from "./edit";
-import ProductPage from "../../../pages/Plataform/ProductPage";
 import product from "./product";
+import Arrow from "./arrow";
+import doctorUser from "./doctor_user";
 
 export default {
     clear: Clear,
@@ -26,5 +27,7 @@ export default {
     options_vertical: option_vertical,
     more: More,
     edit: edit,
-    product: product
+    product: product,
+    arrow: Arrow,
+    doctorUser: doctorUser 
 };

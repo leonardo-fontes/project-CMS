@@ -104,19 +104,19 @@ function AboutHome() {
           <div className="flex w-full lg:gap-36 my-16 items-center justify-around">
             <UserImage
               key={usuarios[0].id}
-              handleClick={() => handleClick(usuarios[0].id)}
+              onClick={() => handleClick(usuarios[0].id)}
               photo={usuarios[0].photo}
               classname={usuarios[0].classname}
             />
             <UserImage
               key={usuarios[1].id}
-              handleClick={() => handleClick(usuarios[1].id)}
+              onClick={() => handleClick(usuarios[1].id)}
               photo={usuarios[1].photo}
               classname={usuarios[1].classname}
             />
             <UserImage
               key={usuarios[2].id}
-              handleClick={() => handleClick(usuarios[2].id)}
+              onClick={() => handleClick(usuarios[2].id)}
               photo={usuarios[2].photo}
               classname={usuarios[2].classname}
             />
@@ -137,19 +137,19 @@ function AboutHome() {
           <div className="flex w-full lg:gap-36 my-16 items-center justify-around">
             <UserImage
               key={usuarios[3].id}
-              handleClick={() => handleClick(usuarios[3].id)}
+              onClick={() => handleClick(usuarios[3].id)}
               photo={usuarios[3].photo}
               classname={usuarios[3].classname}
             />
             <UserImage
               key={usuarios[4].id}
-              handleClick={() => handleClick(usuarios[4].id)}
+              onClick={() => handleClick(usuarios[4].id)}
               photo={usuarios[4].photo}
               classname={usuarios[4].classname}
             />
             <UserImage
               key={usuarios[5].id}
-              handleClick={() => handleClick(usuarios[5].id)}
+              onClick={() => handleClick(usuarios[5].id)}
               photo={usuarios[5].photo}
               classname={usuarios[5].classname}
             />

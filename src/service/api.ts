@@ -18,7 +18,7 @@ export type SignupData = SigninData & {
 
 const token = secureLocalStorage.getItem("token");
 
-const api = axios.create({
+export const http = axios.create({
     baseURL: "https://acesseme.i9cloud.intercompany.com.br/nodered",
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -29,13 +29,13 @@ const api = axios.create({
 
 export default {
     validateToken: async (token: string) => {
-        const response = await api.post("/validate", { token });
+        const response = await http.post("/validate", { token });
         return response.data;
     },
     signin: async (data: SigninData) => {
         try {
-            const response = await api.post("/auth", data);
-            api.defaults.headers.common[
+            const response = await http.post("/auth", data);
+            http.defaults.headers.common[
                 "Authorization"
             ] = `Bearer ${response.data.token}`;
             secureLocalStorage.setItem("token", response.data.token);
@@ -75,7 +75,7 @@ export default {
             },
         };
         try {
-            const response = await api.post("/register", body, {
+            const response = await http.post("/register", body, {
                 headers: {
                     x_ic_auth:
                         "ca7f820238563a2471629e5c348d5b4dc54c1d590bd9e9ad1e64af28e24510a4",
@@ -87,13 +87,13 @@ export default {
             return false;
         }
     },
-    async getUser() {
+    async getUser(id?: string) {
         try {
-            const user = secureLocalStorage.getItem("user");
-            const response = await api.get(`/crud/v1/users/${user}`);
-            const life = await api.get(`/crud/v1/${user}/life/_id/50/0`);
+            const user = id ?? secureLocalStorage.getItem("user");
+            const response = await http.get(`/crud/v1/users/${user}`);
+            const life = await http.get(`/crud/v1/${user}/life/_id/50/0`);
             const circleProfessionals = (
-                await api.get<CircleProfessionals[]>(
+                await http.get<CircleProfessionals[]>(
                     `/crud/v1/${user}/circles/_id/50/0`,
                 )
             ).data.filter(({ subtype }) => subtype === "circles_professionals");
