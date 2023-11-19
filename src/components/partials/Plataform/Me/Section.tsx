@@ -4,9 +4,11 @@ import Card from "../../../layout/Card";
 import { UseFormRegister, UseFormResetField } from "react-hook-form";
 import Icon from "../../../icons";
 import Button from "../../../inputs/Button";
+import Input from "../../../inputs/Input";
 
 type Props = {
-    name: string;
+    subtitleName?: string;
+    descriptionName: string;
     title: string;
     subtitle?: string;
     description: string;
@@ -17,7 +19,8 @@ type Props = {
 };
 
 const Section: React.FC<Props> = ({
-    name,
+    subtitleName,
+    descriptionName,
     title,
     subtitle,
     description,
@@ -33,15 +36,28 @@ const Section: React.FC<Props> = ({
                 {title}
             </h3>
             {subtitle ? (
-                <h4 className="text-base leading-6 font-bold">{subtitle}</h4>
+                !editable ? (
+                    <h4 className="text-base leading-6 font-bold">
+                        {subtitle}
+                    </h4>
+                ) : (
+                    <Input
+                        name={subtitleName || ""}
+                        register={register}
+                        className="text-base"
+                        type="text"
+                        label=""
+                    />
+                )
             ) : (
                 <></>
             )}
             {editable ? (
                 <textarea
-                    {...register(name)}
-                    className="border-2 rounded-md"
+                    {...register(descriptionName)}
+                    className="p-[23px] rounded-md mt-1 focus-visible:outline-none font-light border-[1px] focus:shadow-input transition-all duration-500 placeholder:text-[#808080] border-gray-3"
                     rows={5}
+                    style={{ resize: "none" }}
                 />
             ) : (
                 <p id="description" className="text-base leading-6 font-normal">
@@ -69,7 +85,8 @@ const Section: React.FC<Props> = ({
                         text="Cancelar"
                         classname="bg-[#E6EBF0] rounded-xl text-black text-base leading-5 font-bold font-nunito-sans py-3 px-6"
                         onClick={() => {
-                            resetField(name);
+                            subtitleName && resetField(subtitleName);
+                            resetField(descriptionName);
                             setEditable(false);
                         }}
                     />

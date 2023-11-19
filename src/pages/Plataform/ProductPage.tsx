@@ -13,7 +13,7 @@ function ProductPage() {
         <Card className="rounded-t-none flex flex-col items-center text-xl pl-6 pr-4 pb-5 text-white">
             <Icon className="my-10" name="product" size={120}/>
             <p className="text-[#515151] mb-7">Você ainda não cadastrou um produto ou serviço</p>
-            <Link className="text-center w-full bg-[#6F3DFF] rounded-full py-5 font-bold" to="#">
+            <Link className="text-center w-full bg-[#6F3DFF] rounded-full py-5 font-bold" to="/construindo">
                 Cadastrar produto ou serviço</Link> 
                 
         </Card>

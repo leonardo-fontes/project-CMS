@@ -1,7 +1,9 @@
 import axios, { AxiosError } from "axios";
-import secureLocalStorage from "react-secure-storage";
 import { CircleProfessionals } from "../types/CircleProfessionals";
 import { RegisterData } from "../components/forms/FormRegister";
+import { RecoverData } from "../components/forms/FormRecover";
+import { ForgotPasswordData } from "../components/forms/FormForgotPassword";
+import secureLocalStorage from "../lib/secureLocalStorage";
 
 export type SigninData = {
     email: string;
@@ -16,13 +18,14 @@ export type SignupData = SigninData & {
     mobilelogin: string;
 };
 
-const token = secureLocalStorage.getItem("token");
+const token = secureLocalStorage.get("token");
 
 export const http = axios.create({
     baseURL: "https://acesseme.i9cloud.intercompany.com.br/nodered",
     headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
+        x_ic_auth: import.meta.env.VITE_API_KEY,
         Authorization: token ? `Bearer ${token}` : null,
     },
 });
@@ -38,8 +41,8 @@ export default {
             http.defaults.headers.common[
                 "Authorization"
             ] = `Bearer ${response.data.token}`;
-            secureLocalStorage.setItem("token", response.data.token);
-            secureLocalStorage.setItem("user", response.data.id);
+            secureLocalStorage.set("token", response.data.token);
+            secureLocalStorage.set("user", response.data.id);
             return true;
         } catch (e) {
             return false;
@@ -75,21 +78,24 @@ export default {
             },
         };
         try {
-            const response = await http.post("/register", body, {
-                headers: {
-                    x_ic_auth:
-                        "ca7f820238563a2471629e5c348d5b4dc54c1d590bd9e9ad1e64af28e24510a4",
-                },
-            });
+            const response = await http.post("/register", body);
             console.log(response.data);
             return true;
         } catch (e) {
             return false;
         }
     },
+    resetPassword: async (data: RecoverData) => {
+        await http.post("/reset-password", data);
+        return true;
+    },
+    forgotPassword: async (data: ForgotPasswordData) => {
+        await http.post("/recover-password", data);
+        return true;
+    },
     async getUser(id?: string) {
         try {
-            const user = id ?? secureLocalStorage.getItem("user");
+            const user = id ?? secureLocalStorage.get("user");
             const response = await http.get(`/crud/v1/users/${user}`);
             const life = await http.get(`/crud/v1/${user}/life/_id/50/0`);
             const circleProfessionals = (
@@ -97,6 +103,7 @@ export default {
                     `/crud/v1/${user}/circles/_id/50/0`,
                 )
             ).data.filter(({ subtype }) => subtype === "circles_professionals");
+            delete response.data?.pswdhash;
             return {
                 ...response.data,
                 life: life.data,

@@ -16,7 +16,7 @@ function CompanyHome() {
           </p>
           <Links
             text="Quero ser uma empresa parceira"
-            link="#"
+            link="/register-partner"
             classname="md:w-80 bg-white text-[var(--primary-color)] hover:text-[var(--gradient-color)]"
           />
         </div>

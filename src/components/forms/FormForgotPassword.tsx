@@ -2,22 +2,51 @@ import Button from "../inputs/Button";
 import Input from "../inputs/Input";
 import { Link, useSearchParams } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
+import api from "../../service/api";
+import { useMemo, useState } from "react";
 
-type Inputs = {
+export type ForgotPasswordData = {
     email: string;
 };
 
 function FormLogin() {
     const [searchParams] = useSearchParams();
+    const [message, setMessage] = useState<"success" | "error" | null>(null);
     const {
         register,
         handleSubmit,
         watch,
         // formState: { errors },
-    } = useForm<Inputs>({ values: { email: searchParams.get("email") ?? "" } });
-
+    } = useForm<ForgotPasswordData>({
+        defaultValues: { email: searchParams.get("email") ?? "" },
+    });
+    const feedback = useMemo(
+        () =>
+            message === "success"
+                ? "E-mail enviado com link para redefinação de senha."
+                : "Algo aconteceu, tente novamente.",
+        [message],
+    );
+    const classNameFeedback = useMemo(
+        () =>
+            message === "success"
+                ? "border-success bg-[#5fffaf3a] text-success"
+                : "border-error bg-[#FFEDED] text-error",
+        [message],
+    );
     const email = watch("email");
-    const handleForgot: SubmitHandler<Inputs> = async () => {};
+    const handleForgot: SubmitHandler<ForgotPasswordData> = async (data) => {
+        try {
+            await api.forgotPassword(data);
+            setMessage("success");
+        } catch (err) {
+            console.log(err);
+            setMessage("error");
+        }
+        setTimeout(() => {
+            setMessage(null);
+        }, 3000);
+    };
 
     return (
         <form
@@ -70,6 +99,14 @@ function FormLogin() {
                         label="E-mail"
                     />
                 </div>
+                {message ? (
+                    <div
+                        className={`${classNameFeedback} border-[1px] p-4 rounded-md`}
+                    >
+                        {feedback}
+                    </div>
+                ) : null}
+
                 <div className="flex items-center justify-between">
                     <Button
                         type="submit"

@@ -13,6 +13,11 @@ import edit from "./edit";
 import product from "./product";
 import Arrow from "./arrow";
 import doctorUser from "./doctor_user";
+import Maintenance from "./maintenance";
+import Partner1 from "./partner1";
+import Partner2 from "./partner2";
+import Partner3 from "./partner3";
+import Partner4 from "./partner4";
 
 export default {
     clear: Clear,
@@ -29,5 +34,11 @@ export default {
     edit: edit,
     product: product,
     arrow: Arrow,
-    doctorUser: doctorUser 
+    doctorUser: doctorUser, 
+    maintenance: Maintenance,
+    partner1: Partner1,
+    partner2: Partner2,
+    partner3: Partner3,
+    partner4: Partner4,
+
 };

@@ -18,7 +18,7 @@ function VideoHome() {
         </h1>
         <div className="flex lg:flex-row flex-col md:gap-36 gap-8 pt-6">
           <div className="flex flex-col gap-16">
-            <p className="px-9">
+            <p className="px-9 md:px-0 pr-0 lg:pr-36">
               A Acesse-me é uma plataforma onde pessoas com <br />
               deficiência e doenças raras trocam informações. Além de <br />
               estabelecer uma ponte com médicos e especialistas.

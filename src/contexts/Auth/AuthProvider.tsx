@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import api, { SigninData } from "../../service/api";
-import secureLocalStorage from "react-secure-storage";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UserProfile } from "../../types/User";
+import secureLocalStorage from "../../lib/secureLocalStorage";
 
 export const AuthProvider = ({
     children,
@@ -16,22 +16,22 @@ export const AuthProvider = ({
 
     // persist user
     useEffect(() => {
-        if (!user && secureLocalStorage.getItem("user")) getUser();
+        if (!user && secureLocalStorage.get("user")) getUser();
     }, [user]);
 
     // validate user
     useEffect(() => {
         if (
             pathname.startsWith("/plataform") &&
-            !(user || secureLocalStorage.getItem("user"))
+            !(user || secureLocalStorage.get("user"))
         ) {
             navigate("/login");
         } else if (pathname === "/plataform") {
-            navigate("/plataform/me");
+            navigate("/plataform/user/me");
         } else if (
             ["login", "register"].filter((page) => pathname.includes(page))
                 .length &&
-            (user || secureLocalStorage.getItem("user"))
+            (user || secureLocalStorage.get("user"))
         ) {
             navigate("/plataform");
         }
@@ -49,8 +49,8 @@ export const AuthProvider = ({
     };
 
     const signout = async () => {
-        secureLocalStorage.removeItem("token");
-        secureLocalStorage.removeItem("user");
+        secureLocalStorage.remove("token");
+        secureLocalStorage.remove("user");
         setUser(null);
     };
 

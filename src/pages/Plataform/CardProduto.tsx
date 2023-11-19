@@ -51,14 +51,14 @@ function CardProduto({ price }: Props) {
         </p>
         <Link
           className="text-[#0F4FAA] font-semibold text-center underline text-xl pb-8 pt-5 leading-8"
-          to="#"
+          to="/product-page"
         >
           {" "}
           Visitar página do produto
         </Link>
         <Link
           className="text-[#6F3DFF] text-xl border-[1px] border-[#6F3DFF] rounded-3xl text-center px-10 py-3 font-bold "
-          to="#"
+          to="/create-chipping"
         >
           Criar uma vaquinha
         </Link>

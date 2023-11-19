@@ -7,6 +7,7 @@ import Section from "../../components/partials/Plataform/Me/Section";
 import { useForm } from "react-hook-form";
 import updateUser from "../../service/User/updateUser";
 import { useAuth } from "../../hooks/useAuth";
+import Hero from "../../components/partials/Plataform/Me/Hero";
 
 const MePage: React.FC = () => {
     const loaderData = useLoaderData();
@@ -41,66 +42,24 @@ const MePage: React.FC = () => {
     }, [reset, user]);
     return (
         <div className="col-span-8 font-nunito flex flex-col gap-5">
-            <Card className="w-full">
-                <div className="bg-primary h-52">
-                    {data.photo_cover ? (
-                        <img
-                            alt="Capa do perfil"
-                            src={data.photo_cover}
-                            className="object-cover object-center"
-                        />
-                    ) : null}
-                </div>
-                <div className="px-8 pb-9 mt-[-75px] flex flex-col gap-[14px]">
-                    <div className="info">
-                        <div className="w-[150px] h-[150px] border-2 border-white bg-blue-500 rounded-full mb-1">
-                            {data.photo_profile ? (
-                                <img
-                                    alt="Foto de perfil"
-                                    src={data.photo_profile}
-                                    className="object-cover object-center"
-                                />
-                            ) : null}
-                        </div>
-                        <h2 id="name" className="text-2xl font-bold">
-                            {data.first_name} {data.last_name}
-                            {data?.pronoun ? (
-                                <small
-                                    id="pronoun"
-                                    className="text-base font-normal"
-                                >
-                                    (Ela/dela)
-                                </small>
-                            ) : null}
-                        </h2>
-                        <p id="profession" className="text-xl font-normal">
-                            {data.infos_about?.profession}
-                        </p>
-                    </div>
-                    {data.infos_about?.disability && (
-                        <div id="difficulties" className="flex gap-3">
-                            {(
-                                data.infos_about.disability?.split?.(",") ||
-                                data.infos_about.disability
-                            ).map((dificulty: string) => (
-                                <div
-                                    className="bg-[#E6EBF0] py-[2px] px-3 rounded-full text-base font-normal"
-                                    key={dificulty}
-                                >
-                                    {dificulty}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-            </Card>
+            <Hero
+                first_name={data?.first_name}
+                pronoun={data?.pronoun}
+                photo_cover={data?.photo_cover}
+                photo_profile={data?.photo_profile}
+                profession={data?.infos_about?.profession}
+                disability={data?.infos_about?.disability}
+                register={register}
+                reset={() => reset(data)}
+                submitValue={saveUser}
+            />
             <Section
                 title="Sobre"
                 description={data.infos_about?.about}
                 register={register}
                 resetField={resetField}
                 submitValue={saveUser}
-                name="infos_about.about"
+                descriptionName="infos_about.about"
                 enableEdit={editable}
             />
             <Section
@@ -110,7 +69,8 @@ const MePage: React.FC = () => {
                 register={register}
                 resetField={resetField}
                 submitValue={saveUser}
-                name="infos_about.challenge.description"
+                subtitleName="infos_about.challenge.title"
+                descriptionName="infos_about.challenge.description"
                 enableEdit={editable}
             />
             <Section
@@ -120,7 +80,8 @@ const MePage: React.FC = () => {
                 register={register}
                 resetField={resetField}
                 submitValue={saveUser}
-                name="infos_about.adaptations.description"
+                subtitleName="infos_about.adaptations.title"
+                descriptionName="infos_about.adaptations.description"
                 enableEdit={editable}
             />
             <Card className="cicle-professions relative flex flex-col gap-[15px] px-9 py-5">

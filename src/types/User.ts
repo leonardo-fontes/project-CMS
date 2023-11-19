@@ -26,7 +26,7 @@ export type User = {
         interests: string;
         location: string;
         mobilelogin: string;
-        profession: string | string[];
+        profession: string;
         challenge: { title: string; description: string };
         adaptations: { title: string; description: string };
         studies: string;

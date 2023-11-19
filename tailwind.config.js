@@ -6,6 +6,8 @@ export default {
       colors: {
         'gradient': 'var(--gradient-color)',
         'primary': 'var(--primary-color)',
+        'success': '#08512C',
+        'error': '#800D0D',
         'gray': { 3: '#515151' },
         'blue': {
           3: '#0F4FAA'

@@ -23,6 +23,8 @@ import Search from "./pages/Plataform/Search";
 import ProfessionalCircle from "./pages/Plataform/ProfessionalCircle";
 import RegisterProCircle from "./pages/Plataform/RegisterProCircle";
 import api from "./service/api";
+import RecoverPassword from "./pages/RecoverPassword";
+import Construindo from "./pages/Plataform/Construindo";
 
 const plataform = [
     <Route path="user/me" element={<User />} />,
@@ -58,11 +60,14 @@ export const router = createBrowserRouter(
             <Route path="/terms" element={<Terms />} />,
             <Route path="/login" element={<Login />} />,
             <Route index path="/register" element={<Register />} />,
-            <Route path="/forgot-password" element={<ForgotPassword />} />,
+            <Route path="/recover-password" element={<ForgotPassword />} />,
+            <Route path="/reset-password" element={<RecoverPassword />} />,
             <Route path="/plataform" element={<Plataform />}>
                 {...plataform}
             </Route>
             <Route path="/blog-example" element={<BlogPage />} />
+            <Route path="/404-page" element={<Construindo />} />
+            <Route path="*" element={<Construindo />} />
         </Route>,
     ),
 );

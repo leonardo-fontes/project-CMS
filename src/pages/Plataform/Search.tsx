@@ -60,7 +60,7 @@ function Search() {
 
           <Link
             className="font-bold py-3 text-center bg-[#E6EBF0] text-base"
-            to="#"
+            to="/ongs"
           >
             Mostrar todas as ONGs
           </Link>
@@ -84,7 +84,7 @@ function Search() {
             </p>
             <Link
               className="font-bold py-3 text-center border-[1px] border-[#6F3DFF] rounded-full text-[#6F3DFF] text-xl mt-3"
-              to="#"
+              to="/help"
             >
               Eu quero ajudar
             </Link>
@@ -107,7 +107,7 @@ function Search() {
             </p>
             <Link
               className="font-bold py-3 text-center border-[1px] border-[#6F3DFF] rounded-full text-[#6F3DFF] text-xl mt-3"
-              to="#"
+              to="/help"
             >
               Eu quero ajudar
             </Link>
@@ -115,7 +115,7 @@ function Search() {
 
           <Link
             className="font-bold py-3 text-center bg-[#E6EBF0] text-base"
-            to="#"
+            to="/request-help"
           >
             Mostrar todos os pedidos de ajuda
           </Link>
